@@ -1,0 +1,195 @@
+document.addEventListener("DOMContentLoaded", function () {
+	/* ---------- Loader ---------- */
+	var loader = document.querySelector(".tp-loader");
+	if (loader) {
+		window.addEventListener("load", function () {
+			setTimeout(function () {
+				loader.classList.add("is-hidden");
+			}, 350);
+		});
+	}
+
+	/* ---------- Scroll progress ---------- */
+	var progress = document.querySelector(".scroll-progress");
+	function updateProgress() {
+		if (!progress) return;
+		var h = document.documentElement;
+		var scrolled = h.scrollTop;
+		var height = h.scrollHeight - h.clientHeight;
+		progress.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + "%";
+	}
+	document.addEventListener("scroll", updateProgress, { passive: true });
+	updateProgress();
+
+	/* ---------- Nav: dropdowns (desktop hover + click) ---------- */
+	var navItems = document.querySelectorAll("[data-has-dropdown]");
+	var isTouch = window.matchMedia("(hover: none)").matches;
+
+	navItems.forEach(function (item) {
+		var link = item.querySelector(".nav-link");
+
+		function open() { item.classList.add("is-open"); link && link.classList.add("is-open"); }
+		function close() { item.classList.remove("is-open"); link && link.classList.remove("is-open"); }
+		function toggle(e) {
+			e.preventDefault();
+			var willOpen = !item.classList.contains("is-open");
+			navItems.forEach(close);
+			if (willOpen) open();
+		}
+
+		if (!isTouch && !item.closest(".mobile-panel")) {
+			item.addEventListener("mouseenter", open);
+			item.addEventListener("mouseleave", close);
+		}
+		if (link) link.addEventListener("click", toggle);
+	});
+
+	document.addEventListener("click", function (e) {
+		if (!e.target.closest("[data-has-dropdown]")) {
+			navItems.forEach(function (item) { item.classList.remove("is-open"); });
+		}
+	});
+
+	/* ---------- Mobile menu toggle ---------- */
+	var navToggle = document.querySelector(".nav-toggle");
+	var mobilePanel = document.querySelector(".mobile-panel");
+	if (navToggle && mobilePanel) {
+		navToggle.addEventListener("click", function () {
+			mobilePanel.classList.toggle("is-open");
+			document.body.style.overflow = mobilePanel.classList.contains("is-open") ? "hidden" : "";
+		});
+		mobilePanel.querySelectorAll("a:not([data-has-dropdown] > .nav-link)").forEach(function (a) {
+			a.addEventListener("click", function () {
+				mobilePanel.classList.remove("is-open");
+				document.body.style.overflow = "";
+			});
+		});
+	}
+
+	/* ---------- Scroll reveal ---------- */
+	var revealEls = document.querySelectorAll(".reveal");
+	if ("IntersectionObserver" in window && revealEls.length) {
+		var io = new IntersectionObserver(
+			function (entries) {
+				entries.forEach(function (entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("is-visible");
+						io.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+		);
+		revealEls.forEach(function (el) { io.observe(el); });
+	} else {
+		revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+	}
+
+	/* ---------- Animated counters ---------- */
+	var counters = document.querySelectorAll("[data-count]");
+	if ("IntersectionObserver" in window && counters.length) {
+		var counterIo = new IntersectionObserver(
+			function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					counterIo.unobserve(entry.target);
+					var el = entry.target;
+					var target = parseFloat(el.getAttribute("data-count"));
+					var decimals = target % 1 !== 0 ? 1 : 0;
+					var suffix = el.getAttribute("data-suffix") || "";
+					var duration = 1400;
+					var start = null;
+					function step(ts) {
+						if (!start) start = ts;
+						var progressRatio = Math.min((ts - start) / duration, 1);
+						var eased = 1 - Math.pow(1 - progressRatio, 3);
+						var value = target * eased;
+						el.textContent = value.toFixed(decimals) + suffix;
+						if (progressRatio < 1) requestAnimationFrame(step);
+					}
+					requestAnimationFrame(step);
+				});
+			},
+			{ threshold: 0.4 }
+		);
+		counters.forEach(function (el) { counterIo.observe(el); });
+	}
+
+	/* ---------- Cookie banner ---------- */
+	var cookieBox = document.querySelector(".cookie-box");
+	if (cookieBox) {
+		if (!localStorage.getItem("tp-cookies-accepted")) {
+			setTimeout(function () { cookieBox.classList.add("is-visible"); }, 1200);
+		}
+		var acceptBtn = cookieBox.querySelector(".cookie-accept");
+		if (acceptBtn) {
+			acceptBtn.addEventListener("click", function () {
+				localStorage.setItem("tp-cookies-accepted", "1");
+				cookieBox.classList.remove("is-visible");
+			});
+		}
+	}
+
+	/* ---------- Dealer search + voivodeship filter (gdziekupic.html) ---------- */
+	var dealerInput = document.querySelector("[data-dealer-search]");
+	var dealerWoj = document.querySelector("[data-woj-select]");
+	var dealerCards = document.querySelectorAll("[data-dealer-name]");
+	var dealerEmpty = document.querySelector(".dealer-empty");
+
+	function applyDealerFilters() {
+		var q = dealerInput ? dealerInput.value.trim().toLowerCase() : "";
+		var woj = dealerWoj ? dealerWoj.value : "";
+		var visibleCount = 0;
+		dealerCards.forEach(function (card) {
+			var haystack = (
+				card.getAttribute("data-dealer-name") + " " + card.getAttribute("data-dealer-addr")
+			).toLowerCase();
+			var matchesQuery = q === "" || haystack.indexOf(q) !== -1;
+			var matchesWoj = woj === "" || card.getAttribute("data-woj") === woj;
+			var match = matchesQuery && matchesWoj;
+			card.style.display = match ? "" : "none";
+			if (match) visibleCount++;
+		});
+		if (dealerEmpty) dealerEmpty.style.display = visibleCount === 0 ? "block" : "none";
+	}
+
+	if (dealerInput && dealerCards.length) dealerInput.addEventListener("input", applyDealerFilters);
+	if (dealerWoj && dealerCards.length) dealerWoj.addEventListener("change", applyDealerFilters);
+
+	/* ---------- Dealer map (gdziekupic.html, Leaflet + OpenStreetMap) ---------- */
+	var mapEl = document.getElementById("dealer-map");
+	if (mapEl && typeof L !== "undefined" && typeof TOYAMA_DEALERS !== "undefined") {
+		var map = L.map(mapEl, { scrollWheelZoom: false }).setView([52.05, 19.4], 6);
+		L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+			maxZoom: 18
+		}).addTo(map);
+
+		TOYAMA_DEALERS.forEach(function (d) {
+			var marker = L.circleMarker([d.lat, d.lon], {
+				radius: 7,
+				weight: 2,
+				color: "#e31e2a",
+				fillColor: "#e31e2a",
+				fillOpacity: 0.55
+			}).addTo(map);
+			var html = "<b>" + d.n + "</b><br>" + d.a + "<br>" + d.p;
+			if (d.w) html += '<br><a href="' + d.w + '" target="_blank" rel="noopener">' + d.w + "</a>";
+			marker.bindPopup(html);
+		});
+	}
+
+	/* ---------- Spec tabs (product pages, optional) ---------- */
+	var tabButtons = document.querySelectorAll("[data-tab-target]");
+	tabButtons.forEach(function (btn) {
+		btn.addEventListener("click", function () {
+			var group = btn.closest("[data-tab-group]");
+			if (!group) return;
+			group.querySelectorAll("[data-tab-target]").forEach(function (b) { b.classList.remove("is-active"); });
+			group.querySelectorAll("[data-tab-panel]").forEach(function (p) { p.classList.remove("is-active"); });
+			btn.classList.add("is-active");
+			var panel = group.querySelector('[data-tab-panel="' + btn.getAttribute("data-tab-target") + '"]');
+			if (panel) panel.classList.add("is-active");
+		});
+	});
+});
