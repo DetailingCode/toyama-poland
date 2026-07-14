@@ -4,6 +4,10 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-14 (6)
+
+- Siatka "Dlaczego Toyama" na stronie głównej (`.feature-grid`, 9 kafelków) układała się w 4 kolumny, zostawiając pustą przestrzeń w ostatnim rzędzie (9 nie dzieli się przez 4). Zmieniono próg `auto-fit`/`minmax` z 260px na 320px w `css/main.css` — przy szerokości kontenera 1240px daje to dokładnie 3 kolumny (3 pełne rzędy po 3 kafelki), nadal responsywnie zwężając się do 2 i 1 kolumny na mniejszych ekranach.
+
 ## 2026-07-14 (5)
 
 - W sekcjach "Kompatybilne ładowarki" / "Zobacz też — pozostałe serie" (`.related-strip`, obecne na wszystkich 6 stronach `seria-*.html` i 11 stronach `tbc*.html`) zdjęcia i tytuły były za małe — każda z 82 kart miała identyczne inline style (`height:100px`/`120px` na obrazku, `font-size:14px`/`15px` na h3, `padding:20px` na karcie), skopiowane wklejeniem.
