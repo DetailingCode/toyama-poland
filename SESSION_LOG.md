@@ -4,6 +4,14 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-14 (2)
+
+- Na 6 podstronach serii akumulatorów (`seria-npc.html`, `seria-npcg.html`, `seria-lc.html`, `seria-npm.html`, `seria-lfp.html`, `seria-npg.html`) sekcja "Karta wymiarowa" pokazywała gotową grafikę (jasne tło, biały arkusz kalkulacyjny) — nie pasowała do ciemnego motywu strony.
+- Odczytano dane liczbowe z każdej grafiki (`image/battery/*-size.jpg`) i zastąpiono `<img>` prawdziwą tabelą HTML (`<table class="dim-table">`) z tymi samymi danymi, stylowaną pod ciemny motyw.
+- Dodano nowy blok stylów `.dim-table` / `.dim-table-wrap` w `css/main.css` (przed sekcją `DISTRIBUTOR CARDS`) — ciemne tło, obramowania w kolorach `--abyss-*`, nazwy modeli w kolorze akcentu, responsywny scroll poziomy na wąskich ekranach.
+- Oryginalne pliki `*-size.jpg` zostały na dysku (nieużywane już przez HTML) — nie usunięto ich, na wypadek gdyby były potrzebne gdzie indziej.
+- Zweryfikowano wizualnie przez użytkownika (otwarcie `seria-npg.html` w przeglądarce) — wygląd zaakceptowany.
+
 ## 2026-07-14
 
 - Poprzednie okno czatu zostało zamknięte bez zapisanego kontekstu (brak pamięci między sesjami) — odtworzono stan wyłącznie z plików na dysku.

@@ -881,6 +881,80 @@ h1, h2, h3, h4 {
 
 .spec-table td:last-child { color: var(--fog-100); font-weight: 600; }
 
+/* ==================== DIMENSION TABLE ==================== */
+.dim-table-wrap {
+	overflow-x: auto;
+	background: var(--abyss-900);
+	border: 1px solid var(--abyss-600);
+	border-radius: var(--radius);
+}
+
+.dim-table {
+	width: 100%;
+	min-width: 760px;
+	border-collapse: collapse;
+	font-size: 13.5px;
+}
+
+.dim-table caption {
+	caption-side: top;
+	text-align: left;
+	padding: 16px 22px;
+	font-family: var(--font-display);
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	color: var(--fog-100);
+	background: var(--abyss-800);
+	border-bottom: 1px solid var(--abyss-600);
+}
+
+.dim-table th,
+.dim-table td {
+	padding: 13px 16px;
+	border-bottom: 1px solid var(--abyss-700);
+	border-right: 1px solid var(--abyss-700);
+	text-align: center;
+	white-space: nowrap;
+}
+
+.dim-table th:last-child,
+.dim-table td:last-child { border-right: none; }
+
+.dim-table thead .dim-table-labels th {
+	background: var(--abyss-800);
+	color: var(--fog-100);
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+}
+
+.dim-table thead .dim-table-units th {
+	background: var(--abyss-850);
+	color: var(--fog-400);
+	font-size: 11px;
+	font-weight: 500;
+}
+
+.dim-table tbody th {
+	text-align: left;
+	color: var(--accent);
+	font-weight: 700;
+	background: var(--abyss-850);
+}
+
+.dim-table tbody td { color: var(--fog-300); }
+
+.dim-table tbody td:nth-child(2),
+.dim-table tbody td:nth-child(3) { color: var(--fog-100); font-weight: 600; }
+
+.dim-table tbody tr:last-child td,
+.dim-table tbody tr:last-child th { border-bottom: none; }
+
+.dim-table tbody tr:hover td,
+.dim-table tbody tr:hover th { background: var(--abyss-800); }
+
 /* ==================== DISTRIBUTOR CARDS / SEARCH ==================== */
 .dealer-filters {
 	display: flex;
