@@ -66,6 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
+	/* ---------- Clickable category cards ---------- */
+	document.querySelectorAll(".product-card[data-href]").forEach(function (card) {
+		card.addEventListener("click", function (e) {
+			if (e.target.closest("a")) return;
+			window.location.href = card.getAttribute("data-href");
+		});
+	});
+
 	/* ---------- Scroll reveal ---------- */
 	var revealEls = document.querySelectorAll(".reveal");
 	if ("IntersectionObserver" in window && revealEls.length) {
