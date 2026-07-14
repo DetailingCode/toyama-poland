@@ -4,6 +4,10 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-14 (4)
+
+- Etykiety w lewej kolumnie tabel `.spec-table` ("Typ akumulatora", "Stan produktu" itd.) były prawie niewidoczne — kolor `--fog-400` (#5b6a80) na tle `--abyss-900` miał za niski kontrast. Zmieniono na `--fog-300` (#97a3b6) w `css/main.css`.
+
 ## 2026-07-14 (3)
 
 - Seria NPC miała błędnie skopiowany zakres pojemności "7Ah – 240Ah" (240Ah to dane z serii NPG) w trzech miejscach: `seria-npc.html` (meta description, licznik zakresu pojemności, tabela specyfikacji) oraz na karcie produktu w `akumulatory.html`. Poprawiono na faktyczny zakres NPC: 7Ah – 9Ah (modele NPC7 i NPC9, zgodnie z kartą wymiarową).

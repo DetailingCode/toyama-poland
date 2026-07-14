@@ -873,7 +873,7 @@ h1, h2, h3, h4 {
 
 .spec-table td:first-child {
 	width: 42%;
-	color: var(--fog-400);
+	color: var(--fog-300);
 	text-transform: uppercase;
 	font-size: 12px;
 	letter-spacing: 0.05em;
