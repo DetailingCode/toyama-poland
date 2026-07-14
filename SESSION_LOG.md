@@ -4,6 +4,11 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-14 (5)
+
+- W sekcjach "Kompatybilne ładowarki" / "Zobacz też — pozostałe serie" (`.related-strip`, obecne na wszystkich 6 stronach `seria-*.html` i 11 stronach `tbc*.html`) zdjęcia i tytuły były za małe — każda z 82 kart miała identyczne inline style (`height:100px`/`120px` na obrazku, `font-size:14px`/`15px` na h3, `padding:20px` na karcie), skopiowane wklejeniem.
+- Dodano reguły `.related-strip .product-card`, `.related-strip .product-card-img`, `.related-strip .product-card h3` w `css/main.css` (wysokość obrazka 160px, tytuł 17px) i usunięto zduplikowane inline style ze wszystkich 17 plików HTML (sed, masowa zamiana, zweryfikowana liczbą wystąpień przed/po).
+
 ## 2026-07-14 (4)
 
 - Etykiety w lewej kolumnie tabel `.spec-table` ("Typ akumulatora", "Stan produktu" itd.) były prawie niewidoczne — kolor `--fog-400` (#5b6a80) na tle `--abyss-900` miał za niski kontrast. Zmieniono na `--fog-300` (#97a3b6) w `css/main.css`.
