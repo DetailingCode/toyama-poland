@@ -4,6 +4,10 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-14 (3)
+
+- Seria NPC miała błędnie skopiowany zakres pojemności "7Ah – 240Ah" (240Ah to dane z serii NPG) w trzech miejscach: `seria-npc.html` (meta description, licznik zakresu pojemności, tabela specyfikacji) oraz na karcie produktu w `akumulatory.html`. Poprawiono na faktyczny zakres NPC: 7Ah – 9Ah (modele NPC7 i NPC9, zgodnie z kartą wymiarową).
+
 ## 2026-07-14 (2)
 
 - Na 6 podstronach serii akumulatorów (`seria-npc.html`, `seria-npcg.html`, `seria-lc.html`, `seria-npm.html`, `seria-lfp.html`, `seria-npg.html`) sekcja "Karta wymiarowa" pokazywała gotową grafikę (jasne tło, biały arkusz kalkulacyjny) — nie pasowała do ciemnego motywu strony.
