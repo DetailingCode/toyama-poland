@@ -4,6 +4,11 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15 (8)
+
+- Podpięto galerię dla `tbc9a.html` (5 zdjęć z `image/charger/9a/`). Zdjęcie 3 (infografika opisu wyświetlacza, oryginalnie `.jpg` z białym tłem i czarnym tekstem) obrobione tym samym skryptem co wcześniej dla tbc8a — tło usunięte, tekst/strzałki zamienione na biały, zapisane jako `3.png` (stary `3.jpg` usunięty).
+- Status galerii ładowarek na koniec dnia: 6a, 8a, 9a, 10la, 10a3s, 20a3s, 10a4s, 20a4s, 4a3s mają już dedykowane wielozdjęciowe galerie z przezroczystym tłem. Bez galerii nadal: tbc15a.html, tbc10a-24.html (pojedyncze stare zdjęcie) — do zrobienia, gdy użytkownik doda foldery.
+
 ## 2026-07-15 (7)
 
 - Podpięto galerię dla `tbc10la.html` (4 zdjęcia z `image/charger/10la/`) — przezroczyste tła, bez obróbki.
