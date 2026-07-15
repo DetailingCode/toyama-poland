@@ -144,6 +144,38 @@ h1, h2, h3, h4 {
 	transition: width 0.1s linear;
 }
 
+.scroll-ah-counter {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 400;
+	display: flex;
+	align-items: baseline;
+	gap: 4px;
+	padding: 10px 16px;
+	border-radius: 100px;
+	background: var(--dropdown-glass);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	border: 1px solid var(--abyss-600);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	pointer-events: none;
+}
+
+.scroll-ah-counter.is-visible { opacity: 1; transform: translateY(0); }
+
+.scroll-ah-counter svg { width: 15px; height: 15px; color: var(--accent); flex-shrink: 0; align-self: center; }
+.scroll-ah-counter .value { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--fog-100); }
+.scroll-ah-counter .unit { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+
+@media (max-width: 640px) {
+	.scroll-ah-counter { right: 12px; bottom: 12px; padding: 8px 12px; }
+	.scroll-ah-counter .value { font-size: 16px; }
+}
+
 /* ==================== LOADER ==================== */
 .tp-loader {
 	position: fixed;

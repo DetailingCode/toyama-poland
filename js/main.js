@@ -85,14 +85,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
-	/* ---------- Scroll progress ---------- */
+	/* ---------- Scroll progress + Ah counter ---------- */
 	var progress = document.querySelector(".scroll-progress");
+	var ahCounter = document.querySelector(".scroll-ah-counter");
+	var ahValue = document.getElementById("scroll-ah-value");
+	var AH_MAX = 240;
 	function updateProgress() {
-		if (!progress) return;
 		var h = document.documentElement;
 		var scrolled = h.scrollTop;
 		var height = h.scrollHeight - h.clientHeight;
-		progress.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + "%";
+		var pct = height > 0 ? scrolled / height : 0;
+		if (progress) progress.style.width = (pct * 100) + "%";
+		if (ahCounter && ahValue) {
+			ahValue.textContent = Math.round(pct * AH_MAX);
+			ahCounter.classList.toggle("is-visible", scrolled > 40);
+		}
 	}
 	document.addEventListener("scroll", updateProgress, { passive: true });
 	updateProgress();
