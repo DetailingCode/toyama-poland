@@ -4,6 +4,12 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15
+
+- Użytkownik pracował z domu (inna sesja) i wypchnął commit `10bef50` — "Dodaj wyszukiwarkę, telefon w nawigacji, sekcje zastosowań i napięcia, poprawki hero i UX kart" (nie zaktualizował wtedy tego dziennika). Pobrano (`git pull --ff-only`) tutaj bez konfliktów, working tree było czyste.
+- Zakres tamtego commitu: wyszukiwarka client-side (`js/search.js`) + numer telefonu w nawigacji na wszystkich podstronach; nowe sekcje "Zastosowania" i "Zakres napięcia dla tej serii" na 6 stronach `seria-*.html`; tabela specyfikacji przeniesiona zaraz po hero; poprawiony efekt cienia za zdjęciem baterii w hero + nowe tło hero; większe logo i dane Markor Sp.J. w stopce; animacja hover na kartach (size-card/product-card/dealer-card); klikalne całe karty kategorii na stronie głównej; 3 dodatkowe karty zalet na `seria-lfp.html`; drobne poprawki tekstu.
+- `css/main.css` zmienił się mocno (+302/-119) — przy kolejnych zmianach w tym pliku sprawdzić aktualny stan przed edycją, nie zakładać wartości sprzed tego pulla.
+
 ## 2026-07-14 (6)
 
 - Siatka "Dlaczego Toyama" na stronie głównej (`.feature-grid`, 9 kafelków) układała się w 4 kolumny, zostawiając pustą przestrzeń w ostatnim rzędzie (9 nie dzieli się przez 4). Zmieniono próg `auto-fit`/`minmax` z 260px na 320px w `css/main.css` — przy szerokości kontenera 1240px daje to dokładnie 3 kolumny (3 pełne rzędy po 3 kafelki), nadal responsywnie zwężając się do 2 i 1 kolumny na mniejszych ekranach.
