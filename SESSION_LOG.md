@@ -4,6 +4,11 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15 (2)
+
+- Podmieniono logo "Toyama Charger" w stopce (`.footer-logo-charger`) na wszystkich 25 podstronach: `./image/Toyama_logo_charger_transparent.png` → `./image/toyama_logo_charger_red.jpg`.
+- Uwaga: `toyama_logo_charger_red.jpg` już istniał w repo od pierwszego commitu (niezmieniony plik, inna kolorystyka niż nowe logo, które użytkownik pokazał na screenshocie — tu "Toyama" jest całe czerwone, na screenshocie było biało-czerwone). Użytkownik potwierdził dwukrotnie, że mimo tej rozbieżności ma być użyty właśnie ten plik. Plik ma czarne tło (nie jest przezroczysty PNG jak poprzedni) — wtapia się w ciemną stopkę (`--abyss-950`), zaakceptowane wizualnie przez użytkownika.
+
 ## 2026-07-15
 
 - Użytkownik pracował z domu (inna sesja) i wypchnął commit `10bef50` — "Dodaj wyszukiwarkę, telefon w nawigacji, sekcje zastosowań i napięcia, poprawki hero i UX kart" (nie zaktualizował wtedy tego dziennika). Pobrano (`git pull --ff-only`) tutaj bez konfliktów, working tree było czyste.
