@@ -4,6 +4,12 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15 (5)
+
+- Podpięto galerię zdjęć dla `tbc8a.html` (4 zdjęcia z `image/charger/8a/`). Zdjęcie 3 (infografika opisująca wyświetlacz) miało białe, nieprzezroczyste tło z czarnym tekstem/strzałkami — napisano skrypt PowerShell/C# (flood-fill usuwający białe tło do przezroczystości + osobne wykrywanie małych skupisk czarnych pikseli, które zamienia na biel, zostawiając duże czarne obszary jak obudowa produktu bez zmian), żeby tekst pozostał czytelny na ciemnej stronie.
+- Podpięto galerie dla `tbc10a3s.html` i `tbc20a3s.html` (po 3 zdjęcia z nowych folderów `image/charger/10a3s/` i `image/charger/20a3s/`) — zdjęcia miały już przezroczyste tło, bez potrzeby obróbki.
+- Użytkownik dorzucił też własne zmiany w folderach zdjęć ładowarek między turami (m.in. nowe zdjęcia w `9a/`, `10a-20a-3s/`, nowy folder `10a4s/` jeszcze niepodpięty do żadnej strony, usunięte stare pliki `tbc9a-protect.png`/`tbc9a-stage.png`) — wciągnięte do commita razem z resztą.
+
 ## 2026-07-15 (4)
 
 - Sekcja "Podstawowe parametry" na stronach ładowarek: dodano parametr "Pojemność akumulatorów" (od/do, na podstawie pola "Pojemność ładowania" z tabeli specyfikacji) na wszystkich 11 stronach `tbc*.html`. Dla tbc6a/tbc9a wzięto łączny zakres min-max (nie osobno per chemia), zgodnie z wcześniejszym ustaleniem dot. napięcia.
