@@ -123,6 +123,42 @@ document.addEventListener("DOMContentLoaded", function () {
 		counters.forEach(function (el) { counterIo.observe(el); });
 	}
 
+	/* ---------- Product gallery ---------- */
+	document.querySelectorAll("[data-gallery]").forEach(function (gallery) {
+		var images;
+		try {
+			images = JSON.parse(gallery.getAttribute("data-images") || "[]");
+		} catch (e) {
+			images = [];
+		}
+		var prevBtn = gallery.querySelector("[data-gallery-prev]");
+		var nextBtn = gallery.querySelector("[data-gallery-next]");
+		var dotsWrap = gallery.querySelector("[data-gallery-dots]");
+		if (images.length < 2) {
+			if (prevBtn) prevBtn.style.display = "none";
+			if (nextBtn) nextBtn.style.display = "none";
+			if (dotsWrap) dotsWrap.style.display = "none";
+			return;
+		}
+		var current = 0;
+		var imgEl = gallery.querySelector("[data-gallery-img]");
+		var dots = gallery.querySelectorAll("[data-gallery-dot]");
+		function show(index) {
+			current = (index + images.length) % images.length;
+			imgEl.style.opacity = "0";
+			setTimeout(function () {
+				imgEl.src = images[current];
+				imgEl.style.opacity = "1";
+			}, 150);
+			dots.forEach(function (d, i) { d.classList.toggle("is-active", i === current); });
+		}
+		if (prevBtn) prevBtn.addEventListener("click", function () { show(current - 1); });
+		if (nextBtn) nextBtn.addEventListener("click", function () { show(current + 1); });
+		dots.forEach(function (d, i) {
+			d.addEventListener("click", function () { show(i); });
+		});
+	});
+
 	/* ---------- Cookie banner ---------- */
 	var cookieBox = document.querySelector(".cookie-box");
 	if (cookieBox) {

@@ -1406,7 +1406,7 @@ h1, h2, h3, h4 {
 	background: linear-gradient(90deg, var(--accent), var(--accent-hot));
 	transform: scaleX(0);
 	transform-origin: left;
-	transition: transform 1.6s cubic-bezier(0.16, 0.8, 0.3, 1) 0.15s;
+	transition: transform 2.4s cubic-bezier(0.16, 0.8, 0.3, 1) 0.15s;
 }
 
 .capacity-counter.is-visible .capacity-counter-fill { transform: scaleX(1); }
@@ -1459,6 +1459,134 @@ h1, h2, h3, h4 {
 	font-size: 12px;
 	line-height: 1.7;
 	color: var(--fog-400);
+}
+
+/* ==================== PRODUCT GALLERY ==================== */
+.product-gallery-main {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.product-gallery-img {
+	max-height: 408px;
+	margin: 0 auto;
+	filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5));
+	transition: opacity 0.25s ease;
+}
+
+.product-gallery-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--abyss-900);
+	border: 1px solid var(--abyss-600);
+	border-radius: 50%;
+	color: var(--fog-100);
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.product-gallery-arrow:hover {
+	color: var(--accent);
+	border-color: var(--accent-line);
+	background: var(--abyss-800);
+}
+
+.product-gallery-arrow svg { width: 20px; height: 20px; }
+
+.product-gallery-prev { left: 0; }
+.product-gallery-next { right: 0; }
+
+.product-gallery-dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 18px;
+}
+
+.product-gallery-dots button {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--abyss-600);
+	transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.product-gallery-dots button.is-active {
+	background: var(--accent);
+	transform: scale(1.3);
+}
+
+/* ==================== CHARGER PARAMETER CARD ==================== */
+.param-group { margin-bottom: 26px; }
+.param-group:last-of-type { margin-bottom: 0; }
+
+.param-group-label {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--fog-400);
+	text-align: center;
+	margin-bottom: 14px;
+}
+
+.param-range {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+}
+
+.param-range-item { text-align: center; flex-shrink: 0; }
+.param-range-item .stat-num { font-size: 30px; }
+
+.param-range-bar {
+	flex: 1 1 60px;
+	max-width: 120px;
+	height: 3px;
+	border-radius: 4px;
+	background: var(--abyss-700);
+	overflow: hidden;
+}
+
+.param-range-fill {
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(90deg, var(--accent), var(--accent-hot));
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 2.4s cubic-bezier(0.16, 0.8, 0.3, 1) 0.15s;
+}
+
+.param-range.is-visible .param-range-fill { transform: scaleX(1); }
+
+.param-single { text-align: center; }
+.param-single .stat-num { font-size: 30px; }
+
+.param-availability {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+}
+
+.param-availability svg {
+	width: 20px;
+	height: 20px;
+	color: var(--accent);
+	filter: drop-shadow(0 0 6px var(--accent-dim));
+}
+
+.param-availability.is-empty svg {
+	color: var(--fog-400);
+	filter: none;
 }
 
 /* ==================== RELATED PRODUCTS ==================== */
