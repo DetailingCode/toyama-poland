@@ -4,6 +4,10 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15 (3)
+
+- Zdjęcie produktu na 11 stronach ładowarek (`tbc*.html`) było za małe — powiększono o ~20% (`max-height:340px` → `408px`, inline style). Strony serii akumulatorów (`seria-*.html`) mają ten sam wzorzec (`max-height:340px`), ale użytkownik prosił konkretnie o zdjęcia ładowarek, więc nie ruszano ich — do rozważenia przy następnej prośbie, jeśli baterie też mają wyglądać za małe.
+
 ## 2026-07-15 (2)
 
 - Podmieniono logo "Toyama Charger" w stopce (`.footer-logo-charger`) na wszystkich 25 podstronach: `./image/Toyama_logo_charger_transparent.png` → `./image/toyama_logo_charger_red.jpg`.
