@@ -4,6 +4,11 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15 (6)
+
+- Podpięto galerie dla `tbc10a4s.html` i `tbc20a4s.html` (po 4 zdjęcia z `image/charger/10a4s/` i `image/charger/20a4s/`) — przezroczyste tła, bez potrzeby obróbki.
+- Wciągnięte kolejne ręczne zmiany użytkownika w folderach zdjęć (m.in. `10la/1.png`, poprawka w `10a-20a-4s/`, usunięte stare pliki w `10a4s/`).
+
 ## 2026-07-15 (5)
 
 - Podpięto galerię zdjęć dla `tbc8a.html` (4 zdjęcia z `image/charger/8a/`). Zdjęcie 3 (infografika opisująca wyświetlacz) miało białe, nieprzezroczyste tło z czarnym tekstem/strzałkami — napisano skrypt PowerShell/C# (flood-fill usuwający białe tło do przezroczystości + osobne wykrywanie małych skupisk czarnych pikseli, które zamienia na biel, zostawiając duże czarne obszary jak obudowa produktu bez zmian), żeby tekst pozostał czytelny na ciemnej stronie.
