@@ -21,17 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.addEventListener("scroll", updateProgress, { passive: true });
 	updateProgress();
 
-	/* ---------- Nav: dropdowns (desktop hover + click) ---------- */
+	/* ---------- Nav: dropdowns (desktop hover, click navigates) ---------- */
 	var navItems = document.querySelectorAll("[data-has-dropdown]");
 	var isTouch = window.matchMedia("(hover: none)").matches;
 
 	navItems.forEach(function (item) {
 		var link = item.querySelector(".nav-link");
+		var caret = link && link.querySelector(".caret");
 
 		function open() { item.classList.add("is-open"); link && link.classList.add("is-open"); }
 		function close() { item.classList.remove("is-open"); link && link.classList.remove("is-open"); }
 		function toggle(e) {
 			e.preventDefault();
+			e.stopPropagation();
 			var willOpen = !item.classList.contains("is-open");
 			navItems.forEach(close);
 			if (willOpen) open();
@@ -41,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			item.addEventListener("mouseenter", open);
 			item.addEventListener("mouseleave", close);
 		}
-		if (link) link.addEventListener("click", toggle);
+		/* Clicking the link itself navigates to the category page; only the caret icon toggles the dropdown (touch devices). */
+		if (caret) caret.addEventListener("click", toggle);
 	});
 
 	document.addEventListener("click", function (e) {

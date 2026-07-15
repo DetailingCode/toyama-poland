@@ -1547,6 +1547,11 @@ h1, h2, h3, h4 {
 .param-range-item { text-align: center; flex-shrink: 0; }
 .param-range-item .stat-num { font-size: 30px; }
 
+.param-range-extra {
+	border-right: 1px solid var(--abyss-600);
+	padding-right: 18px;
+}
+
 .param-range-bar {
 	flex: 1 1 60px;
 	max-width: 120px;

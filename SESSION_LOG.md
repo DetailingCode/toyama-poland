@@ -4,6 +4,14 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-15 (4)
+
+- Sekcja "Podstawowe parametry" na stronach ładowarek: dodano parametr "Pojemność akumulatorów" (od/do, na podstawie pola "Pojemność ładowania" z tabeli specyfikacji) na wszystkich 11 stronach `tbc*.html`. Dla tbc6a/tbc9a wzięto łączny zakres min-max (nie osobno per chemia), zgodnie z wcześniejszym ustaleniem dot. napięcia.
+- Na tbc6a.html i tbc9a.html "Zasilacz 12V" przeniesiono z osobnej sekcji do tego samego wiersza co "Napięcie ładowania" — jako dodatkowa wartość po lewej stronie, oddzielona pionową kreską (`.param-range-extra`, `border-right`), bez łączącego paska (nie jest częścią zakresu napięcia).
+- Uzupełniono `<meta name="keywords">` na wszystkich 25 podstronach na podstawie researchu popularnych fraz w branży (akumulatory żelowe/AGM/LiFePO4, ładowarki, kamper/łódź/UPS/fotowoltaika). Zaznaczono użytkownikowi, że meta keywords nie wpływa na SEO w Google od ~15 lat — realny efekt dają title/description/nagłówki/treść, tego nie ruszano w tym przebiegu.
+- Karty na `akumulatory.html` (6 kart serii) i `ladowarki.html` (13 kart modeli) są teraz w całości klikalne (`data-href` + istniejący mechanizm JS z sesji domowej — kursor:pointer, nawigacja po kliknięciu poza wewnętrznym linkiem).
+- Naprawiono nawigację w menu (`js/main.js`): klik w "Akumulatory"/"Ładowarki" wcześniej tylko otwierał dropdown (`e.preventDefault()` na całym `.nav-link`) i nie pozwalał przejść na stronę kategorii. Teraz klik w tekst linku nawiguje normalnie; tylko klik w ikonę strzałki (`.caret`) przełącza rozwijane menu — dotyczy to obu (desktop i mobile), na desktopie dropdown nadal otwiera się dodatkowo po najechaniu myszką.
+
 ## 2026-07-15 (3)
 
 - Zdjęcie produktu na 11 stronach ładowarek (`tbc*.html`) było za małe — powiększono o ~20% (`max-height:340px` → `408px`, inline style). Strony serii akumulatorów (`seria-*.html`) mają ten sam wzorzec (`max-height:340px`), ale użytkownik prosił konkretnie o zdjęcia ładowarek, więc nie ruszano ich — do rozważenia przy następnej prośbie, jeśli baterie też mają wyglądać za małe.
