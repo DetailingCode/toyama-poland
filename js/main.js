@@ -1,4 +1,80 @@
 document.addEventListener("DOMContentLoaded", function () {
+	/* ---------- Theme toggle ---------- */
+	if (localStorage.getItem("tp-theme") === "light") {
+		document.documentElement.setAttribute("data-theme", "light");
+	}
+	document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+		btn.addEventListener("click", function () {
+			var isLight = document.documentElement.getAttribute("data-theme") === "light";
+			if (isLight) {
+				document.documentElement.removeAttribute("data-theme");
+				localStorage.setItem("tp-theme", "dark");
+			} else {
+				document.documentElement.setAttribute("data-theme", "light");
+				localStorage.setItem("tp-theme", "light");
+			}
+		});
+	});
+
+	/* ---------- Charging time calculator ---------- */
+	(function () {
+		var calcCurrent = document.getElementById("calc-current");
+		var calcCapacity = document.getElementById("calc-capacity");
+		var calcSoc = document.getElementById("calc-soc");
+		var calcResult = document.getElementById("calc-result");
+		if (!calcCurrent || !calcCapacity || !calcSoc || !calcResult) return;
+
+		var LANG = document.documentElement.lang === "en" ? "en" : "pl";
+		var calcCurrentValue = document.getElementById("calc-current-value");
+		var calcCapacityValue = document.getElementById("calc-capacity-value");
+		var calcSocValue = document.getElementById("calc-soc-value");
+
+		function fillSlider(el) {
+			var min = parseFloat(el.min);
+			var max = parseFloat(el.max);
+			var val = parseFloat(el.value);
+			var pct = ((val - min) / (max - min)) * 100;
+			el.style.background = "linear-gradient(to right, var(--accent) " + pct + "%, var(--abyss-700) " + pct + "%)";
+		}
+
+		function formatTime(hours) {
+			var totalMinutes = Math.round(hours * 60);
+			var h = Math.floor(totalMinutes / 60);
+			var m = totalMinutes % 60;
+			var hLabel = LANG === "en" ? "h" : "godz.";
+			var mLabel = "min";
+			if (h === 0 && m === 0) return "0 " + mLabel;
+			var parts = [];
+			if (h > 0) parts.push(h + " " + hLabel);
+			if (m > 0) parts.push(m + " " + mLabel);
+			return parts.join(" ");
+		}
+
+		function updateCalc() {
+			var current = parseFloat(calcCurrent.value);
+			var capacity = parseFloat(calcCapacity.value);
+			var soc = parseFloat(calcSoc.value);
+
+			calcCurrentValue.textContent = current + "A";
+			calcCapacityValue.textContent = capacity + "Ah";
+			calcSocValue.textContent = soc + "%";
+
+			fillSlider(calcCurrent);
+			fillSlider(calcCapacity);
+			fillSlider(calcSoc);
+
+			var remaining = capacity * (1 - soc / 100);
+			var hours = remaining / (current * 0.8);
+			calcResult.textContent = formatTime(hours);
+		}
+
+		[calcCurrent, calcCapacity, calcSoc].forEach(function (el) {
+			el.addEventListener("input", updateCalc);
+		});
+
+		updateCalc();
+	})();
+
 	/* ---------- Loader ---------- */
 	var loader = document.querySelector(".tp-loader");
 	if (loader) {
@@ -21,13 +97,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.addEventListener("scroll", updateProgress, { passive: true });
 	updateProgress();
 
-	/* ---------- Nav: dropdowns (desktop hover, click navigates) ---------- */
+	/* ---------- Nav: dropdowns (desktop hover, click toggles) ---------- */
 	var navItems = document.querySelectorAll("[data-has-dropdown]");
 	var isTouch = window.matchMedia("(hover: none)").matches;
 
 	navItems.forEach(function (item) {
 		var link = item.querySelector(".nav-link");
-		var caret = link && link.querySelector(".caret");
 
 		function open() { item.classList.add("is-open"); link && link.classList.add("is-open"); }
 		function close() { item.classList.remove("is-open"); link && link.classList.remove("is-open"); }
@@ -43,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			item.addEventListener("mouseenter", open);
 			item.addEventListener("mouseleave", close);
 		}
-		/* Clicking the link itself navigates to the category page; only the caret icon toggles the dropdown (touch devices). */
-		if (caret) caret.addEventListener("click", toggle);
+		/* The parent link has no href (dropdown-only trigger) — clicking anywhere on it toggles the dropdown. */
+		if (link) link.addEventListener("click", toggle);
 	});
 
 	document.addEventListener("click", function (e) {
