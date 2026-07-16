@@ -779,6 +779,43 @@ h1, h2, h3, h4 {
 	mask-image: radial-gradient(ellipse 70% 65% at 68% 40%, #000 0%, transparent 72%);
 }
 
+.hero-lightning {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.hero-lightning svg { width: 100%; height: 100%; }
+
+.hero-lightning .bolt {
+	fill: none;
+	stroke: var(--accent-hot);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	filter: drop-shadow(0 0 6px var(--accent-hot)) drop-shadow(0 0 18px var(--accent-line));
+	opacity: 0;
+}
+
+.hero-lightning .bolt-1 { animation: tp-lightning-flicker 9s ease-in-out infinite; }
+.hero-lightning .bolt-2 { animation: tp-lightning-flicker 11s ease-in-out infinite 3.4s; }
+.hero-lightning .bolt-3 { animation: tp-lightning-flicker 13s ease-in-out infinite 7.1s; }
+
+@keyframes tp-lightning-flicker {
+	0%, 95%, 100% { opacity: 0; }
+	95.5% { opacity: 0.85; }
+	96% { opacity: 0.15; }
+	96.5% { opacity: 1; }
+	97% { opacity: 0.2; }
+	97.5% { opacity: 0.6; }
+	98%, 98.5% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-lightning .bolt { animation: none; opacity: 0; }
+}
+
 .hero-visual::before {
 	content: "";
 	position: absolute;

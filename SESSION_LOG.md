@@ -4,6 +4,10 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (2)
+
+- Dodano animowane tło "wyładowań" (błyskawic) w sekcji hero na `index.html` — 3 poszarpane linie SVG w kolorze akcentu z poświatą, każda z własnym cyklem (9s/11s/13s) i opóźnieniem, migają rzadko i asynchronicznie (`@keyframes tp-lightning-flicker`), umieszczone pod treścią (niższy z-index niż `.hero-flex`). Uwzględnia `prefers-reduced-motion`.
+
 ## 2026-07-16
 
 - Pobrano z domu (fast-forward, bez konfliktów) 2 duże commity: pełna angielska wersja strony (folder `en/`, 24 podstrony), tryb jasny/ciemny, kalkulator czasu ładowania w menu ładowarek, przeróbki nawigacji (`.nav-dropdown-groups` wrapper, `.nav-dropdown-tool` link do kalkulatora).
