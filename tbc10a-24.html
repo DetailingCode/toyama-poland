@@ -40,7 +40,7 @@
 			</span>
 		</a>
 		<a href="ladowarki.html#charge-calculator" class="side-quicknav-item">
-			<span class="side-quicknav-label">Kalkulator</span>
+			<span class="side-quicknav-label">Kalkulator ładowania</span>
 			<span class="side-quicknav-icon">
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
 			</span>
@@ -220,9 +220,9 @@
 	<section class="section bg-900">
 		<div class="container">
 			<div class="contact-grid" style="align-items:center;">
-				<div class="product-gallery reveal" data-gallery data-images='["./image/charger/tbc1224v.png"]'>
+				<div class="product-gallery reveal" data-gallery data-images='["./image/charger/10a24v/1.png","./image/charger/10a24v/2.png","./image/charger/10a24v/3.png","./image/charger/10a24v/4.png"]'>
 					<div class="product-gallery-main">
-						<img src="./image/charger/tbc1224v.png" alt="Ładowarka TBC 10A / 12-24V" class="product-gallery-img" data-gallery-img />
+						<img src="./image/charger/10a24v/1.png" alt="Ładowarka TBC 10A / 12-24V" class="product-gallery-img" data-gallery-img />
 						<button class="product-gallery-arrow product-gallery-prev" aria-label="Poprzednie zdjęcie" data-gallery-prev>
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
 						</button>
@@ -232,6 +232,9 @@
 					</div>
 					<div class="product-gallery-dots" data-gallery-dots>
 						<button class="is-active" data-gallery-dot="0" aria-label="Zdjęcie 1"></button>
+						<button data-gallery-dot="1" aria-label="Zdjęcie 2"></button>
+						<button data-gallery-dot="2" aria-label="Zdjęcie 3"></button>
+						<button data-gallery-dot="3" aria-label="Zdjęcie 4"></button>
 					</div>
 				</div>
 				<div class="callout-card reveal reveal-delay-1">
@@ -287,6 +290,32 @@
 	<section class="section bg-950">
 		<div class="container">
 			<div class="section-head center">
+				<div class="eyebrow" style="justify-content:center;">Jak to działa</div>
+				<h2 class="section-title">Ładowanie <span>5-etapowe</span></h2>
+			</div>
+			<p style="max-width:640px;margin:0 auto 40px;text-align:center;color:var(--fog-300);font-size:15px;line-height:1.7;">Inteligentny algorytm ładowarki automatycznie przechodzi przez kolejne etapy, dopasowując napięcie i prąd do stanu akumulatora — od odsiarczania płyt po test końcowy.</p>
+			<div class="charge-stages stages-5 reveal">
+				<svg viewBox="0 0 500 140" preserveAspectRatio="none" class="charge-stages-svg" aria-hidden="true">
+					<line x1="100" y1="0" x2="100" y2="140" class="charge-stages-divider" />
+					<line x1="200" y1="0" x2="200" y2="140" class="charge-stages-divider" />
+					<line x1="300" y1="0" x2="300" y2="140" class="charge-stages-divider" />
+					<line x1="400" y1="0" x2="400" y2="140" class="charge-stages-divider" />
+					<path class="charge-stages-line" pathLength="1" d="M0,90 L15,60 L30,90 L45,60 L60,90 L75,75 L100,75 L200,55 L300,30 L400,28 L420,45 L500,45" />
+				</svg>
+				<div class="charge-stages-labels">
+					<div class="charge-stages-label label-1"><span class="num">1</span>Odsiarczanie</div>
+					<div class="charge-stages-label label-2"><span class="num">2</span>Wstępne ładowanie</div>
+					<div class="charge-stages-label label-3"><span class="num">3</span>Ładowanie główne</div>
+					<div class="charge-stages-label label-4"><span class="num">4</span>Absorpcja</div>
+					<div class="charge-stages-label label-5"><span class="num">5</span>Test akumulatora</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section bg-900">
+		<div class="container">
+			<div class="section-head center">
 				<div class="eyebrow" style="justify-content:center;">Dane techniczne</div>
 				<h2 class="section-title">Specyfikacja <span>techniczna</span></h2>
 			</div>
@@ -310,7 +339,7 @@
 		</div>
 	</section>
 
-	<section class="section bg-900">
+	<section class="section bg-950">
 		<div class="container">
 			<div class="section-head center">
 				<div class="eyebrow" style="justify-content:center;">Zobacz też</div>

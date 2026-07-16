@@ -1557,7 +1557,7 @@ h1, h2, h3, h4 {
 }
 
 .side-quicknav-item:hover {
-	width: 208px;
+	width: 250px;
 	background: var(--abyss-850);
 	border-color: var(--accent-line);
 	color: var(--accent);
@@ -1565,10 +1565,10 @@ h1, h2, h3, h4 {
 
 .side-quicknav-label {
 	white-space: nowrap;
-	font-size: 13px;
+	font-size: 12px;
 	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.03em;
+	letter-spacing: 0.02em;
 	padding-left: 18px;
 	opacity: 0;
 	transition: opacity 0.2s ease;
@@ -1589,6 +1589,142 @@ h1, h2, h3, h4 {
 
 @media (max-width: 1080px) {
 	.side-quicknav { display: none; }
+}
+
+/* ==================== CHARGE STAGES ANIMATION ==================== */
+.charge-stages {
+	max-width: 900px;
+	margin: 0 auto;
+	background: var(--abyss-900);
+	border: 1px solid var(--abyss-600);
+	border-radius: var(--radius);
+	padding: 28px 28px 20px;
+}
+
+.charge-stages-svg { width: 100%; height: 140px; display: block; overflow: visible; }
+
+.charge-stages-divider { stroke: var(--abyss-700); stroke-width: 1; }
+
+.charge-stages-line {
+	fill: none;
+	stroke: var(--accent-hot);
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	filter: drop-shadow(0 0 5px var(--accent-hot)) drop-shadow(0 0 14px var(--accent-line));
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	opacity: 0;
+	animation: tp-stage-draw 7s ease-in-out forwards;
+	animation-play-state: paused;
+}
+
+.charge-stages.is-visible .charge-stages-line { animation-play-state: running; }
+
+@keyframes tp-stage-draw {
+	0% { stroke-dashoffset: 1; opacity: 0; }
+	8% { stroke-dashoffset: 1; opacity: 1; }
+	100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.charge-stages-labels {
+	display: flex;
+	margin-top: 8px;
+}
+
+.charge-stages-label {
+	flex: 1;
+	text-align: center;
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--fog-400);
+	padding: 0 4px;
+	line-height: 1.35;
+}
+
+.charge-stages-label .num {
+	display: block;
+	font-family: var(--font-display);
+	font-size: 18px;
+	margin-bottom: 2px;
+}
+
+.charge-stages-label {
+	animation-duration: 7s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-play-state: paused;
+}
+.charge-stages-label.label-1 { animation-name: tp-stage-label-1; }
+.charge-stages-label.label-2 { animation-name: tp-stage-label-2; }
+.charge-stages-label.label-3 { animation-name: tp-stage-label-3; }
+.charge-stages-label.label-4 { animation-name: tp-stage-label-4; }
+.charge-stages-label.label-5 { animation-name: tp-stage-label-5; }
+.charge-stages-label.label-6 { animation-name: tp-stage-label-6; }
+.charge-stages-label.label-7 { animation-name: tp-stage-label-7; }
+
+.charge-stages.is-visible .charge-stages-label { animation-play-state: running; }
+
+@keyframes tp-stage-label-1 { 0%, 15% { color: var(--fog-400); } 18%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-2 { 0%, 28% { color: var(--fog-400); } 31%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-3 { 0%, 41% { color: var(--fog-400); } 44%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-4 { 0%, 54% { color: var(--fog-400); } 57%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-5 { 0%, 67% { color: var(--fog-400); } 70%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-6 { 0%, 80% { color: var(--fog-400); } 83%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-7 { 0%, 94% { color: var(--fog-400); } 97%, 100% { color: var(--accent); } }
+
+/* Variants for charge counts other than 7 */
+.charge-stages.stages-3 .charge-stages-label.label-1 { animation-name: tp-stage-label-3-1; }
+.charge-stages.stages-3 .charge-stages-label.label-2 { animation-name: tp-stage-label-3-2; }
+.charge-stages.stages-3 .charge-stages-label.label-3 { animation-name: tp-stage-label-3-3; }
+@keyframes tp-stage-label-3-1 { 0%, 23% { color: var(--fog-400); } 26%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-3-2 { 0%, 54% { color: var(--fog-400); } 57%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-3-3 { 0%, 85% { color: var(--fog-400); } 88%, 100% { color: var(--accent); } }
+
+.charge-stages.stages-4 .charge-stages-label.label-1 { animation-name: tp-stage-label-4-1; }
+.charge-stages.stages-4 .charge-stages-label.label-2 { animation-name: tp-stage-label-4-2; }
+.charge-stages.stages-4 .charge-stages-label.label-3 { animation-name: tp-stage-label-4-3; }
+.charge-stages.stages-4 .charge-stages-label.label-4 { animation-name: tp-stage-label-4-4; }
+@keyframes tp-stage-label-4-1 { 0%, 20% { color: var(--fog-400); } 23%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-4-2 { 0%, 43% { color: var(--fog-400); } 46%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-4-3 { 0%, 66% { color: var(--fog-400); } 69%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-4-4 { 0%, 89% { color: var(--fog-400); } 92%, 100% { color: var(--accent); } }
+
+.charge-stages.stages-5 .charge-stages-label.label-1 { animation-name: tp-stage-label-5-1; }
+.charge-stages.stages-5 .charge-stages-label.label-2 { animation-name: tp-stage-label-5-2; }
+.charge-stages.stages-5 .charge-stages-label.label-3 { animation-name: tp-stage-label-5-3; }
+.charge-stages.stages-5 .charge-stages-label.label-4 { animation-name: tp-stage-label-5-4; }
+.charge-stages.stages-5 .charge-stages-label.label-5 { animation-name: tp-stage-label-5-5; }
+@keyframes tp-stage-label-5-1 { 0%, 17% { color: var(--fog-400); } 20%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-5-2 { 0%, 36% { color: var(--fog-400); } 39%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-5-3 { 0%, 54% { color: var(--fog-400); } 57%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-5-4 { 0%, 72% { color: var(--fog-400); } 75%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-5-5 { 0%, 91% { color: var(--fog-400); } 94%, 100% { color: var(--accent); } }
+
+.charge-stages.stages-6 .charge-stages-label.label-1 { animation-name: tp-stage-label-6-1; }
+.charge-stages.stages-6 .charge-stages-label.label-2 { animation-name: tp-stage-label-6-2; }
+.charge-stages.stages-6 .charge-stages-label.label-3 { animation-name: tp-stage-label-6-3; }
+.charge-stages.stages-6 .charge-stages-label.label-4 { animation-name: tp-stage-label-6-4; }
+.charge-stages.stages-6 .charge-stages-label.label-5 { animation-name: tp-stage-label-6-5; }
+.charge-stages.stages-6 .charge-stages-label.label-6 { animation-name: tp-stage-label-6-6; }
+@keyframes tp-stage-label-6-1 { 0%, 16% { color: var(--fog-400); } 19%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-6-2 { 0%, 31% { color: var(--fog-400); } 34%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-6-3 { 0%, 46% { color: var(--fog-400); } 49%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-6-4 { 0%, 62% { color: var(--fog-400); } 65%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-6-5 { 0%, 77% { color: var(--fog-400); } 80%, 100% { color: var(--accent); } }
+@keyframes tp-stage-label-6-6 { 0%, 92% { color: var(--fog-400); } 95%, 100% { color: var(--accent); } }
+
+@media (max-width: 640px) {
+	.charge-stages { padding: 20px 14px 16px; }
+	.charge-stages-label { font-size: 8.5px; padding: 0 2px; }
+	.charge-stages-label .num { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.charge-stages-line { animation: none; stroke-dashoffset: 0; opacity: 1; }
+	.charge-stages-label.label-1, .charge-stages-label.label-2, .charge-stages-label.label-3,
+	.charge-stages-label.label-4, .charge-stages-label.label-5, .charge-stages-label.label-6,
+	.charge-stages-label.label-7 { animation: none; color: var(--accent); }
 }
 
 /* ==================== FOOTER ==================== */
@@ -1802,7 +1938,7 @@ h1, h2, h3, h4 {
 	text-align: center;
 	font-size: 12px;
 	line-height: 1.7;
-	color: var(--fog-400);
+	color: var(--fog-300);
 }
 
 /* ==================== PRODUCT GALLERY ==================== */

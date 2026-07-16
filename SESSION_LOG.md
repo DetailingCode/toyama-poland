@@ -4,6 +4,18 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (5)
+
+- Widget `.side-quicknav` (prawa krawędź ekranu): dodana trzecia ikona "Kalkulator ładowania" (zegar, link do `#charge-calculator`) na wszystkich 25 stronach PL **i** 25 EN (wcześniej EN w ogóle nie miał tego widgetu — dodano kompletnie, wraz z brakującą kotwicą `id="charger-models"` w `en/ladowarki.html`). Poprawiono też: etykieta nie mieściła się w rozwiniętym przycisku (208px→250px, font 13px→12px).
+- Kalkulator czasu ładowania: minimalny prąd na suwaku 4A→2A (PL+EN).
+- `.voltage-note` (tekst pod kalkulatorem i pod "Zakresem napięcia" na stronach serii akumulatorów): ten sam nawracający problem kontrastu, `--fog-400`→`--fog-300`.
+- Galerie zdjęć podpięte dla `tbc10la.html` (4), `tbc9a.html` (5, z konwersją infografiki 3.jpg→3.png usuwającą tło+odwracającą tekst na biały — jak wcześniej dla 8a), `tbc10a4s.html`/`tbc20a4s.html` (po 4).
+- **Nowa funkcja: animowana sekcja "Jak to działa" (`.charge-stages`)** — linia SVG rysująca się jednorazowo przy wejściu w widok (mechanizm `.reveal`/`.is-visible`, bez JS), etykiety etapów podświetlają się kolejno i zostają podświetlone. Iterowano: v1 pętla nieskończona 10s → user chciał tylko raz przy scrollu (przeprojektowano na `animation-fill-mode:forwards` + `animation-play-state` sterowany klasą `.is-visible`) → user chciał 2x wolniej (3.5s→7s).
+  - CSS sparametryzowane pod liczbę etapów: `.charge-stages.stages-{3,4,5,6}` (7 to wariant domyślny bez modyfikatora), każdy z własnym zestawem `@keyframes` dla equal-spaced label-reveal timing.
+  - Dane etapów **zweryfikowane z faktycznych grafik w galeriach produktowych** (nie zmyślone): TBC 15A i TBC 2-4-8A = 7 etapów (Desulphation→Float, z ich własnych "7-stage" grafik). TBC 10A/24V = 5 etapów (z `10a24v/3.png`). TBC 4.5-6A = dual: 6-etapowe kwasowo-ołowiowe + 4-etapowe LiFePO4 (z `6a/4.png`, dokładny tekst "6 STAGE 6AMP.../4 STAGE 4.5AMP..."). TBC 9A-10A: **znaleziono błąd** — jej galeria (`9a/4.png`) zawierała skopiowaną grafikę z modelu 6A (nie własne dane 9A/10A); user potwierdził, że 9A-10A używa tego samego algorytmu co 4.5-6A, więc zastosowano identyczne dane po potwierdzeniu.
+  - Rozszerzono na pozostałe: TBC 10A (LA) = 3 etapy (Miękki start/Ładowanie główne/Podtrzymanie, bez potwierdzenia graficznego — uproszczony domyślny profil na życzenie użytkownika). 5x Li-ion(3S)/LiFePO4(4S) = 4 etapy z "Aktywacja BMS" jako etapem 1 — zweryfikowano researchem (WebSearch), że BMS-wake-up przed normalnym ładowaniem to realna, udokumentowana cecha ładowarek litowych (terminologia różni się między producentami, Toyama sama używa "PMC Activation" w swoich materiałach).
+  - Wszystkie sekcje wstawione MIĘDZY hero a tabelą "Specyfikacja techniczna" (nie po niej) — kolejność ustalona na życzenie użytkownika przy pierwszym prototypie (tbc15a), z zachowaniem naprzemiennego tła sekcji (bg-900/bg-950).
+
 ## 2026-07-16 (4)
 
 Duży przebieg porządkowy ("czy strona jest gotowa?" → lista 5 rzeczy do poprawy, zrobione po kolei):

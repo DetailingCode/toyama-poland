@@ -40,7 +40,7 @@
 			</span>
 		</a>
 		<a href="ladowarki.html#charge-calculator" class="side-quicknav-item">
-			<span class="side-quicknav-label">Kalkulator</span>
+			<span class="side-quicknav-label">Kalkulator ładowania</span>
 			<span class="side-quicknav-icon">
 				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
 			</span>
@@ -282,6 +282,30 @@
 	<section class="section bg-950">
 		<div class="container">
 			<div class="section-head center">
+				<div class="eyebrow" style="justify-content:center;">Jak to działa</div>
+				<h2 class="section-title">Ładowanie <span>4-etapowe</span></h2>
+			</div>
+			<p style="max-width:640px;margin:0 auto 40px;text-align:center;color:var(--fog-300);font-size:15px;line-height:1.7;">Ładowarka rozpoczyna od aktywacji BMS-a akumulatora litowo-jonowego (potrzebnej, gdy pakiet jest głęboko rozładowany), po czym przechodzi przez miękki start, ładowanie główne i podtrzymanie.</p>
+			<div class="charge-stages stages-4 reveal">
+				<svg viewBox="0 0 400 140" preserveAspectRatio="none" class="charge-stages-svg" aria-hidden="true">
+					<line x1="100" y1="0" x2="100" y2="140" class="charge-stages-divider" />
+					<line x1="200" y1="0" x2="200" y2="140" class="charge-stages-divider" />
+					<line x1="300" y1="0" x2="300" y2="140" class="charge-stages-divider" />
+					<path class="charge-stages-line" pathLength="1" d="M0,105 L20,95 L40,105 L60,95 L100,100 L200,75 L300,25 L320,30 L400,75" />
+				</svg>
+				<div class="charge-stages-labels">
+					<div class="charge-stages-label label-1"><span class="num">1</span>Aktywacja BMS</div>
+					<div class="charge-stages-label label-2"><span class="num">2</span>Miękki start</div>
+					<div class="charge-stages-label label-3"><span class="num">3</span>Ładowanie główne</div>
+					<div class="charge-stages-label label-4"><span class="num">4</span>Podtrzymanie</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section bg-900">
+		<div class="container">
+			<div class="section-head center">
 				<div class="eyebrow" style="justify-content:center;">Dane techniczne</div>
 				<h2 class="section-title">Specyfikacja <span>techniczna</span></h2>
 			</div>
@@ -305,7 +329,7 @@
 		</div>
 	</section>
 
-	<section class="section bg-900">
+	<section class="section bg-950">
 		<div class="container">
 			<div class="section-head center">
 				<div class="eyebrow" style="justify-content:center;">Zobacz też</div>
