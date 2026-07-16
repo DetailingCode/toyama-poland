@@ -303,6 +303,12 @@ document.addEventListener("DOMContentLoaded", function () {
 			maxZoom: 18
 		}).addTo(map);
 
+		mapEl.addEventListener("wheel", function (e) {
+			if (!e.ctrlKey && !e.metaKey) return;
+			e.preventDefault();
+			map.setZoom(map.getZoom() + (e.deltaY < 0 ? 1 : -1), { animate: true });
+		}, { passive: false });
+
 		TOYAMA_DEALERS.forEach(function (d) {
 			var marker = L.circleMarker([d.lat, d.lon], {
 				radius: 7,
