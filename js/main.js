@@ -121,12 +121,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (willOpen) open();
 		}
 
-		if (!isTouch && !item.closest(".mobile-panel")) {
+		var isMobilePanelItem = item.closest(".mobile-panel");
+
+		if (!isTouch && !isMobilePanelItem) {
 			item.addEventListener("mouseenter", open);
 			item.addEventListener("mouseleave", close);
 		}
-		/* The parent link has no href (dropdown-only trigger) — clicking anywhere on it toggles the dropdown. */
-		if (link) link.addEventListener("click", toggle);
+		/* Touch/mobile-panel has no hover: first tap opens the dropdown instead of navigating. Desktop links navigate normally on click since hover already reveals the dropdown. */
+		if (link && (isTouch || isMobilePanelItem)) link.addEventListener("click", toggle);
 	});
 
 	document.addEventListener("click", function (e) {

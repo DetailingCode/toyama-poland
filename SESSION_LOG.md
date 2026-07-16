@@ -4,6 +4,19 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (8)
+
+- Poprawiono błędny licznik "10 modeli" ładowarek → **11 modeli** (rzeczywista liczba stron produktowych) w 8 miejscach: `index.html`, `ladowarki.html` (meta description, og:description, nagłówek sekcji) i te same 4 miejsca w `en/`.
+- **Naprawiono trwale bug w menu**: linki "Akumulatory"/"Ładowarki" (i "Batteries"/"Chargers" w EN) w górnym menu nie miały `href` na żadnej z 50 stron (PL+EN) — kliknięcie w sam tekst nic nie robiło, tylko rozwijało dropdown. Bug wrócił po wcześniejszym scaleniu zmian z "sesji home" (był już raz naprawiany). Naprawa objęła dwa warianty znacznika (zwykły i ze stylem inline `color:var(--fog-100)` używanym do podświetlenia aktywnej sekcji na stronach produktowych/serii) oraz `js/main.js`: na desktopie klik teraz normalnie nawiguje (hover i tak pokazuje dropdown), na mobile/dotyku pierwszy tap nadal tylko rozwija listę.
+- Pełny audyt strony przed powyższym: sprawdzone i bez zastrzeżeń — bilans znaczników `<section>`/`</section>`, naprzemienność teł `bg-900`/`bg-950` na stronach ładowarek, brak martwych linków wewnętrznych (PL+EN), brak brakujących obrazków, zgodność `sitemap.xml` z rzeczywistą listą 50 stron, bilans nawiasów klamrowych w `css/main.css` i `js/main.js`.
+
+## 2026-07-16 (7)
+
+- Sekcja "Podstawowe parametry" (product-gallery karta na wszystkich 11 stronach ładowarek): dodano ikonki przy etykietach grup (prąd — piorun, napięcie — strzałka trendu, pojemność — bateria, liczba pakietów — warstwy, tylko na modelach 3S/4S), oraz zamieniono gwiazdkowy wskaźnik "Dostępność" na plakietkę tekstową.
+  - Prototyp zrobiony najpierw na TBC 4.5-6A, user obejrzał i poprosił o iterację: usunięcie zdublowanej ikonki z etykiety "DOSTĘPNOŚĆ" (zostaje tylko w plakietce) oraz zmianę koloru z czerwonego (kolidował wizualnie z czerwonym przyciskiem CTA "Zapytaj o cenę" tuż pod spodem) na zielony — dodano nowy token koloru `--success`/`--success-dim` w `:root` i wariancie `[data-theme="light"]`.
+  - Po zatwierdzeniu rozszerzono na pozostałe 10 stron: 9 modeli dostaje zieloną plakietkę "Dostępne od ręki", **TBC 4A 3S** (jedyny z klasą `is-empty`) dostaje szarą plakietkę "Dostępne wkrótce" z ikoną zegara zamiast check-a.
+  - Zmiany tylko na stronach PL — EN (`en/tbc*.html`) wciąż ma stary gwiazdkowy wskaźnik, nietknięte.
+
 ## 2026-07-16 (6)
 
 - **Nowa statyczna sekcja "Bezpieczeństwo"** (6 ikon: Szybkozłącze SAE, zabezpieczenie przeciążeniowe, przed odwrotną polaryzacją, przed zwarciem, przed przegrzaniem, przed przepięciem) — dodana poniżej sekcji "Jak to działa" (`.charge-stages`), przed tabelą specyfikacji. Bez animacji (na życzenie), reużywa istniejący komponent `.feature-grid`/`.feature-item` ze strony głównej (sekcja "Dlaczego Toyama") dla spójności wizualnej — brak nowego CSS.
