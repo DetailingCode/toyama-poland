@@ -137,6 +137,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
+	/* ---------- FAQ accordion ---------- */
+	document.querySelectorAll("[data-faq-toggle]").forEach(function (btn) {
+		btn.addEventListener("click", function () {
+			btn.closest(".faq-item").classList.toggle("is-open");
+		});
+	});
+
 	/* ---------- Mobile menu toggle ---------- */
 	var navToggle = document.querySelector(".nav-toggle");
 	var mobilePanel = document.querySelector(".mobile-panel");

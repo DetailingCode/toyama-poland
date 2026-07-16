@@ -333,6 +333,13 @@
 	</url>
 
 	<url>
+		<loc>https://toyama.pl/poradnik.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/poradnik.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<url>
 		<loc>https://toyama.pl/kontakt.html</loc>
 		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/kontakt.html" />
 		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/kontakt.html" />

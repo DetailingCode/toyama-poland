@@ -4,6 +4,13 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (9)
+
+- **Nowa strona `poradnik.html`** — baza wiedzy o akumulatorach, dodana na życzenie użytkownika po researchu w sieci (WebSearch: najczęstsze pytania Google o akumulatory, porównania AGM/GEL/LiFePO4, dobór pojemności Ah, przechowywanie zimą). Struktura: TOC z kotwicami, "Dobór pojemności (Ah)" z formułą, tabela porównawcza AGM/żel/LiFePO4, "Jak ładować" (link do kalkulatora), "Przechowywanie i konserwacja", sekcja FAQ (9 pytań) i CTA na koniec.
+  - Zbudowany od zera nowy komponent **akordeonu FAQ** (`.faq-list`/`.faq-item`/`data-faq-toggle`) w `css/main.css` + `js/main.js` — wcześniej nie istniał na stronie. Też nowe klasy pomocnicze: `.guide-toc`, `.guide-compare-table`, `.guide-formula`.
+  - Link "Poradnik" dodany do menu (desktop + mobile) i stopki na wszystkich 25 istniejących stron PL (bulk-sed z zachowaniem wcięć, zweryfikowane po każdym kroku), plus wpis w `sitemap.xml` (priorytet 0.8, bez wariantu EN).
+  - **Tylko PL** — brak wersji `en/poradnik.html`; przełącznik języka na tej stronie celowo wskazuje na `en/index.html` zamiast martwego linku. Rozbudowa na EN to naturalny następny krok, jeśli treść się sprawdzi.
+
 ## 2026-07-16 (8)
 
 - Poprawiono błędny licznik "10 modeli" ładowarek → **11 modeli** (rzeczywista liczba stron produktowych) w 8 miejscach: `index.html`, `ladowarki.html` (meta description, og:description, nagłówek sekcji) i te same 4 miejsca w `en/`.
