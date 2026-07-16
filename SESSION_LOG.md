@@ -4,6 +4,12 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (6)
+
+- **Nowa statyczna sekcja "Bezpieczeństwo"** (6 ikon: Szybkozłącze SAE, zabezpieczenie przeciążeniowe, przed odwrotną polaryzacją, przed zwarciem, przed przegrzaniem, przed przepięciem) — dodana poniżej sekcji "Jak to działa" (`.charge-stages`), przed tabelą specyfikacji. Bez animacji (na życzenie), reużywa istniejący komponent `.feature-grid`/`.feature-item` ze strony głównej (sekcja "Dlaczego Toyama") dla spójności wizualnej — brak nowego CSS.
+  - Przed dodaniem sprawdzono galerie **wszystkich** 11 modeli ładowarek, żeby ustalić które faktycznie mają grafikę "Multi Safety Protections" (użytkownik wkleił zrzut ekranu tej grafiki jako wzór). Potwierdzone tylko na 3 modelach: **TBC 6A, TBC 8A, TBC 9A-10A** (`6a/5.png`, `8a/4.png`, `9a/4.png`). Pozostałe 8 modeli (10la, 15a, 10a24v, 4a3s, 10a3s, 20a3s, 10a4s, 20a4s) nie ma tej grafiki w galerii — sekcja NIE została tam dodana.
+  - Zachowano naprzemienne tło sekcji (bg-900/bg-950) po wstawieniu — zweryfikowane grepem jak zwykle.
+
 ## 2026-07-16 (5)
 
 - Widget `.side-quicknav` (prawa krawędź ekranu): dodana trzecia ikona "Kalkulator ładowania" (zegar, link do `#charge-calculator`) na wszystkich 25 stronach PL **i** 25 EN (wcześniej EN w ogóle nie miał tego widgetu — dodano kompletnie, wraz z brakującą kotwicą `id="charger-models"` w `en/ladowarki.html`). Poprawiono też: etykieta nie mieściła się w rozwiniętym przycisku (208px→250px, font 13px→12px).
