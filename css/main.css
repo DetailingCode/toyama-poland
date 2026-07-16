@@ -278,6 +278,15 @@ h1, h2, h3, h4 {
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
+	max-width: none;
+	padding: 0 32px;
+}
+
+.nav-left {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+	min-width: 0;
 }
 
 .nav-brand {
@@ -399,6 +408,27 @@ h1, h2, h3, h4 {
 
 .nav-search-toggle svg { width: 19px; height: 19px; }
 
+.nav-email {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	color: var(--fog-100);
+	background: transparent;
+	border: 1px solid transparent;
+	border-radius: var(--radius-sm);
+	flex-shrink: 0;
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-email:hover {
+	background: var(--abyss-800);
+	border-color: var(--abyss-600);
+}
+
+.nav-email svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; }
+
 .nav-phone {
 	display: inline-flex;
 	align-items: center;
@@ -502,9 +532,10 @@ h1, h2, h3, h4 {
 
 @media (max-width: 480px) {
 	.container { padding: 0 14px; }
+	.site-nav .container { padding: 0 14px; }
 	.nav-right { gap: 6px; }
 	.nav-brand img { height: 26px; }
-	.nav-search-toggle, .nav-toggle { width: 36px; height: 36px; }
+	.nav-search-toggle, .nav-toggle, .nav-email { width: 36px; height: 36px; }
 	.nav-phone { width: 36px; }
 
 	.nav-lang { height: 26px; padding: 2px; }
@@ -608,10 +639,11 @@ h1, h2, h3, h4 {
 
 .mobile-panel { display: none; }
 
-@media (max-width: 1080px) {
+@media (max-width: 1440px) {
 	.nav-links { display: none; }
 	.nav-cta.desktop-only { display: none; }
 	.nav-toggle { display: flex; }
+	.site-nav .container { padding: 0 24px; }
 
 	.mobile-panel {
 		display: block;
@@ -2388,6 +2420,113 @@ h1, h2, h3, h4 {
 
 @media (max-width: 640px) {
 	.guide-compare-table { display: block; overflow-x: auto; }
+}
+
+.wiring-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 22px;
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.wiring-card {
+	background: var(--abyss-900);
+	border: 1px solid var(--abyss-600);
+	border-radius: var(--radius);
+	padding: 26px 26px 28px;
+}
+
+.wiring-card h3 {
+	color: var(--fog-100);
+	font-size: 18px;
+	margin-bottom: 6px;
+	text-align: center;
+}
+
+.wiring-card .wiring-sub {
+	color: var(--fog-300);
+	font-size: 13.5px;
+	margin-bottom: 18px;
+	text-align: center;
+}
+
+.wiring-diagram {
+	background: var(--abyss-950);
+	border: 1px solid var(--abyss-700);
+	border-radius: var(--radius-sm);
+	padding: 14px 6px;
+	margin-bottom: 18px;
+}
+
+.wiring-diagram svg { width: 100%; height: auto; display: block; overflow: visible; }
+.wiring-diagram .wd-batt { fill: var(--abyss-800); stroke: var(--abyss-600); stroke-width: 1.5; }
+.wiring-diagram .wd-wire {
+	fill: none;
+	stroke: var(--accent);
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-dasharray: 5 6;
+	animation: tp-wire-flow 1.8s linear infinite;
+}
+.wiring-diagram .wd-label { fill: var(--fog-100); font-family: var(--font-body); font-size: 11px; font-weight: 600; text-anchor: middle; }
+.wiring-diagram .wd-term { fill: var(--fog-300); font-family: var(--font-body); font-size: 13px; font-weight: 700; text-anchor: middle; }
+.wiring-diagram .wd-term.wd-term-accent { fill: var(--accent-hot); }
+.wiring-diagram .wd-out { fill: var(--fog-300); font-family: var(--font-body); font-size: 10.5px; }
+.wiring-diagram .wd-wire-dot { fill: var(--accent-hot); filter: drop-shadow(0 0 4px var(--accent-line)); }
+
+@keyframes tp-wire-flow {
+	to { stroke-dashoffset: -22; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wiring-diagram .wd-wire { animation: none; }
+}
+
+.wiring-card p { color: var(--fog-300); font-size: 14px; line-height: 1.75; margin-bottom: 16px; }
+.wiring-card p:last-of-type { margin-bottom: 0; }
+
+.wiring-result {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 16px;
+}
+
+.wiring-result span {
+	flex: 1;
+	background: var(--accent-dim);
+	border: 1px solid var(--accent-line);
+	border-radius: var(--radius-sm);
+	padding: 10px 8px;
+	text-align: center;
+	color: var(--fog-100);
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.wiring-result span strong { display: block; color: var(--accent-hot); font-family: var(--font-display); font-size: 20px; font-weight: 700; }
+
+.wiring-warning {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	background: var(--abyss-850);
+	border: 1px solid var(--abyss-600);
+	border-left: 3px solid var(--accent);
+	border-radius: var(--radius-sm);
+	padding: 14px 16px;
+	color: var(--fog-300);
+	font-size: 13px;
+	line-height: 1.65;
+}
+
+.wiring-warning svg { width: 18px; height: 18px; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+.wiring-warning strong { color: var(--fog-100); }
+.wiring-warning strong.text-accent { color: var(--accent-hot); }
+
+@media (max-width: 640px) {
+	.wiring-card { padding: 22px 20px 24px; }
 }
 
 /* ==================== RESPONSIVE TYPE ==================== */
