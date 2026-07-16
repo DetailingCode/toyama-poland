@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+	<url>
+		<loc>https://toyama.pl/index.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/index.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/index.html" />
+		<changefreq>weekly</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/index.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/index.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/index.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/akumulatory.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/akumulatory.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/akumulatory.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/akumulatory.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/akumulatory.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/akumulatory.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/ladowarki.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/ladowarki.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/ladowarki.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.9</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/ladowarki.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/ladowarki.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/ladowarki.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/seria-npc.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npc.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npc.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/seria-npc.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npc.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npc.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/seria-npg.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npg.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npg.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/seria-npg.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npg.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npg.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/seria-npcg.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npcg.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npcg.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/seria-npcg.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npcg.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npcg.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/seria-npm.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npm.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npm.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/seria-npm.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-npm.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-npm.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/seria-lc.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-lc.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-lc.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/seria-lc.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-lc.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-lc.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/seria-lfp.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-lfp.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-lfp.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/seria-lfp.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/seria-lfp.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/seria-lfp.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc6a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc6a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc6a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc6a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc6a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc6a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc8a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc8a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc8a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc8a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc8a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc8a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc9a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc9a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc9a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc9a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc9a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc9a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc10la.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10la.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10la.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc10la.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10la.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10la.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc15a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc15a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc15a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc15a.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc15a.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc15a.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc10a-24.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10a-24.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10a-24.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc10a-24.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10a-24.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10a-24.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc4a3s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc4a3s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc4a3s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc4a3s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc4a3s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc4a3s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc10a3s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10a3s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10a3s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc10a3s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10a3s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10a3s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc20a3s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc20a3s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc20a3s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc20a3s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc20a3s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc20a3s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc10a4s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10a4s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10a4s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc10a4s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc10a4s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc10a4s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/tbc20a4s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc20a4s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc20a4s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/tbc20a4s.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/tbc20a4s.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/tbc20a4s.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/akcesoria.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/akcesoria.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/akcesoria.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/akcesoria.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/akcesoria.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/akcesoria.html" />
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/gdziekupic.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/gdziekupic.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/gdziekupic.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/gdziekupic.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/gdziekupic.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/gdziekupic.html" />
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/kontakt.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/kontakt.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/kontakt.html" />
+		<changefreq>yearly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/kontakt.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/kontakt.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/kontakt.html" />
+		<changefreq>yearly</changefreq>
+		<priority>0.4</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/private.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/private.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/private.html" />
+		<changefreq>yearly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/private.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/private.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/private.html" />
+		<changefreq>yearly</changefreq>
+		<priority>0.1</priority>
+	</url>
+
+	<url>
+		<loc>https://toyama.pl/warunki-strony.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/warunki-strony.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/warunki-strony.html" />
+		<changefreq>yearly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>https://toyama.pl/en/warunki-strony.html</loc>
+		<xhtml:link rel="alternate" hreflang="pl" href="https://toyama.pl/warunki-strony.html" />
+		<xhtml:link rel="alternate" hreflang="en" href="https://toyama.pl/en/warunki-strony.html" />
+		<changefreq>yearly</changefreq>
+		<priority>0.1</priority>
+	</url>
+
+</urlset>

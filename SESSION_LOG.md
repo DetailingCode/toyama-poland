@@ -4,6 +4,20 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (4)
+
+Duży przebieg porządkowy ("czy strona jest gotowa?" → lista 5 rzeczy do poprawy, zrobione po kolei):
+
+1. **Błędne dane w specyfikacji** — poprawione w `tbc4a3s.html` (Model → `TBC4/12/3S/`, Wyjście → `12.6V 4A`) i `tbc10a3s.html` (Wyjście → `12.6V 10A`, było błędnie skopiowane z modelu 20A).
+2. **`sitemap.xml` + `robots.txt`** — nowe pliki w katalogu głównym, domena `https://toyama.pl` (podana przez użytkownika), 50 adresów (25 PL + 25 EN) z `hreflang` alternate links.
+3. **Open Graph** — dodane na wszystkich 50 stronach (PL+EN): `og:type`, `og:title`, `og:description`, `og:image` (uniwersalnie logo `Toyama_logo_transparent_640px.png`), `og:url`, `og:locale`, `twitter:card`. Wartości title/description wzięte z istniejących `<title>`/`<meta description>` per strona.
+4. **Linki EN** — sprawdzone dokładnie, okazało się że wcześniejsza ocena (jakoby prowadziły z powrotem na PL) była błędna z mojej strony — ścieżki względne bez prefiksu poprawnie zostają w `en/`, przełącznik języka (`../plik.html` dla PL, `plik.html` dla EN) też poprawny. Nic nie wymagało zmiany.
+5. **Kompresja/porządki w `image/`** — folder spadł ze **101MB do 37MB** (–63%) w dwóch etapach:
+   - Zmniejszono wymiary + jakość 17 największych plików (próg 1600px długiego boku, JPEG 85%) — skrypt PowerShell/C# (`System.Drawing`, `HighQualityBicubic`), zapisany w scratchpadzie na przyszłość. Bezpiecznik: nadpisuje tylko jeśli nowy plik faktycznie mniejszy.
+   - Usunięto 14 potem 96 (łącznie 110) plików całkowicie nieużywanych na stronie — stare zdjęcia produktowe, karty wymiarowe (`*-size.jpg`, zastąpione tabelami HTML), stary firmowy logotyp ładowarki, nawet plik loga marki "Haswing" (inny projekt użytkownika, przypadkowo w repo). Zweryfikowane dwukrotnie (grep ze i bez rozróżniania wielkości liter) po HTML+CSS+JS przed usunięciem — usuwanie plików wymagało jawnej zgody użytkownika (auto-mode classifier blokuje nienazwane wprost usuwanie plików).
+
+Dodatkowo: trzecia ikonka w `.side-quicknav` — "Kalkulator" (ikona zegara) linkująca do `ladowarki.html#charge-calculator`, na wszystkich 25 stronach PL, obok istniejących Akumulatory/Ładowarki.
+
 ## 2026-07-16 (3)
 
 - Zaktualizowano oznaczenia "Bestseller": akumulatory — Seria NPG i Seria LiFePO4 (usunięto z NPCG, LFP miała wcześniej "Nowość"); ładowarki — TBC 9A-10A (zostaje), TBC 10A Li-ion (3S), TBC 10A LiFePO4 (4S) — dodane. Zmiany tylko na stronach PL, EN nietknięte.
