@@ -4,6 +4,15 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16
+
+- Pobrano z domu (fast-forward, bez konfliktów) 2 duże commity: pełna angielska wersja strony (folder `en/`, 24 podstrony), tryb jasny/ciemny, kalkulator czasu ładowania w menu ładowarek, przeróbki nawigacji (`.nav-dropdown-groups` wrapper, `.nav-dropdown-tool` link do kalkulatora).
+- Usunięto przypadkowy zagnieżdżony duplikat całego repo (`toyama-poland/toyama-poland/`, 194 MB) — ktoś odpalił `git clone` wewnątrz już istniejącego folderu repo zamiast `git pull`. Był w pełni zsynchronizowany i bez lokalnych zmian, bezpiecznie usunięty za zgodą użytkownika.
+- Zamieniono rdzeń słowa „wielostopniow-" na „wieloetapow-" (wszystkie odmiany: -a/-e/-ych) w 14 plikach (tytuły, meta description, opisy, keywords) — ujednolicenie z resztą strony, gdzie stopka już używała „wieloetapowe" z sesji domowej.
+- Naprawiono `.nav-dropdown-tool` (link "Kalkulator czasu ładowania" w mega-menu Ładowarki): był nadpisywany przez bardziej specyficzną regułę `.nav-dropdown a` (specyficzność 0,1,1 > 0,1,0), przez co tracił `display:flex`, wyśrodkowanie i odstęp ikona-tekst. Poprawiono selektor na `.nav-dropdown .nav-dropdown-tool` (specyficzność 0,2,0) i zwiększono gap 14px→20px.
+- Dodano `id="charger-models"` do sekcji z kartami modeli na `ladowarki.html` (zaraz po sekcji kalkulatora) i zaktualizowano linki "Zobacz ładowarki"/"Zobacz modele" na `index.html` i `akumulatory.html`, żeby prowadziły bezpośrednio tam (`ladowarki.html#charger-models`), pomijając kalkulator na górze strony.
+- Poprawiono kontrast: `.tag` (plakietki typu "4.5A", "LiFePO4" na kartach) — tło `--abyss-700`→`--abyss-600`, tekst `--fog-300`→`--fog-100`. `.group-label h3` (nagłówki grup "GEL / AGM / PB / EFB" itd.) — kolor `--fog-400`→`--fog-300`, font-size 13px→17px, układ zmieniony z "tekst-linia" na wyśrodkowane "linia-tekst-linia" (dodano `::before` obok istniejącego `::after`).
+
 ## 2026-07-15 (8)
 
 - Podpięto galerię dla `tbc9a.html` (5 zdjęć z `image/charger/9a/`). Zdjęcie 3 (infografika opisu wyświetlacza, oryginalnie `.jpg` z białym tłem i czarnym tekstem) obrobione tym samym skryptem co wcześniej dla tbc8a — tło usunięte, tekst/strzałki zamienione na biały, zapisane jako `3.png` (stary `3.jpg` usunięty).
