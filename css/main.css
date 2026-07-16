@@ -2372,6 +2372,9 @@ h1, h2, h3, h4 {
 
 .guide-toc a:hover { background: var(--abyss-850); border-color: var(--accent-line); }
 
+.guide-toc a.is-highlight { border-color: var(--accent-line); }
+.guide-toc a.is-highlight:hover { border-color: var(--accent); }
+
 .guide-toc a svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
 
 .guide-compare-table {
@@ -2475,6 +2478,12 @@ h1, h2, h3, h4 {
 .wiring-diagram .wd-term.wd-term-accent { fill: var(--accent-hot); }
 .wiring-diagram .wd-out { fill: var(--fog-300); font-family: var(--font-body); font-size: 10.5px; }
 .wiring-diagram .wd-wire-dot { fill: var(--accent-hot); filter: drop-shadow(0 0 4px var(--accent-line)); }
+.wiring-diagram .wd-case { fill: var(--abyss-900); stroke: var(--abyss-600); stroke-width: 2; }
+.wiring-diagram .wd-plate-a { fill: var(--accent-dim); stroke: var(--accent-line); stroke-width: 1; }
+.wiring-diagram .wd-plate-b { fill: var(--abyss-700); stroke: var(--abyss-600); stroke-width: 1; }
+.wiring-diagram .wd-term-box { fill: var(--abyss-700); stroke: var(--abyss-600); stroke-width: 1.5; }
+.wiring-diagram .wd-legend-dot-a { fill: var(--accent); }
+.wiring-diagram .wd-legend-dot-b { fill: var(--fog-400); }
 
 @keyframes tp-wire-flow {
 	to { stroke-dashoffset: -22; }
