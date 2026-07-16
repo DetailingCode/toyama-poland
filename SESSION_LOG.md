@@ -4,6 +4,12 @@ Zapis pracy nad projektem toyama-poland, żeby po zamknięciu okna łatwo można
 
 ---
 
+## 2026-07-16 (3)
+
+- Zaktualizowano oznaczenia "Bestseller": akumulatory — Seria NPG i Seria LiFePO4 (usunięto z NPCG, LFP miała wcześniej "Nowość"); ładowarki — TBC 9A-10A (zostaje), TBC 10A Li-ion (3S), TBC 10A LiFePO4 (4S) — dodane. Zmiany tylko na stronach PL, EN nietknięte.
+- Dodano `.side-quicknav` — stały widget z prawej krawędzi ekranu (przy pasku przewijania), tylko desktop (`min-width` odpowiadający chowaniu poniżej 1080px). Dwie ikony (bateria/piorun), domyślnie 48px okrąg, po hover rozwija się do 208px pokazując napis "AKUMULATORY"/"ŁADOWARKI" (linki jak w hero, ładowarki z kotwicą `#charger-models`). Wstawione na wszystkich 25 stronach PL (ten sam punkt insercji: `<div class="scroll-progress">`).
+  - Naprawiono bug: oba przyciski rozszerzały się razem przy hover na jeden — przyczyna: `.side-quicknav` (flex column) miał domyślne `align-items: stretch`, rozciągające oba elementy do wspólnej szerokości kontenera. Fix: `align-items: flex-end` na kontenerze.
+
 ## 2026-07-16 (2)
 
 - Dodano animowane tło "wyładowań" (błyskawic) w sekcji hero na `index.html` — 3 poszarpane linie SVG w kolorze akcentu z poświatą, każda z własnym cyklem (9s/11s/13s) i opóźnieniem, migają rzadko i asynchronicznie (`@keyframes tp-lightning-flicker`), umieszczone pod treścią (niższy z-index niż `.hero-flex`). Uwzględnia `prefers-reduced-motion`.

@@ -1528,6 +1528,69 @@ h1, h2, h3, h4 {
 .size-card .size-tag { font-family: var(--font-display); font-size: 26px; color: var(--accent); }
 .size-card .size-dims { font-size: 12.5px; color: var(--fog-400); margin-top: 6px; }
 
+/* ==================== SIDE QUICKNAV ==================== */
+.side-quicknav {
+	position: fixed;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 400;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 3px;
+}
+
+.side-quicknav-item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	overflow: hidden;
+	width: 48px;
+	height: 48px;
+	background: var(--abyss-900);
+	border: 1px solid var(--abyss-600);
+	border-right: none;
+	border-radius: 100px 0 0 100px;
+	color: var(--fog-100);
+	transition: width 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.side-quicknav-item:hover {
+	width: 208px;
+	background: var(--abyss-850);
+	border-color: var(--accent-line);
+	color: var(--accent);
+}
+
+.side-quicknav-label {
+	white-space: nowrap;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	padding-left: 18px;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.side-quicknav-item:hover .side-quicknav-label { opacity: 1; transition: opacity 0.2s ease 0.1s; }
+
+.side-quicknav-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	flex-shrink: 0;
+}
+
+.side-quicknav-icon svg { width: 20px; height: 20px; }
+
+@media (max-width: 1080px) {
+	.side-quicknav { display: none; }
+}
+
 /* ==================== FOOTER ==================== */
 .site-footer {
 	background: var(--abyss-950);
