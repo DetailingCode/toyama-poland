@@ -65,8 +65,11 @@
 }
 
 html {
+	scrollbar-gutter: stable;
 	scroll-behavior: smooth;
 	scroll-padding-top: var(--nav-h);
+	overflow-x: hidden;
+	width: 100%;
 }
 
 body {
@@ -530,11 +533,14 @@ h1, h2, h3, h4 {
 	.nav-phone { width: 42px; padding: 0; justify-content: center; }
 }
 
+@media (max-width: 520px) {
+	.nav-brand img { height: 26px; }
+}
+
 @media (max-width: 480px) {
 	.container { padding: 0 14px; }
 	.site-nav .container { padding: 0 14px; }
 	.nav-right { gap: 6px; }
-	.nav-brand img { height: 26px; }
 	.nav-search-toggle, .nav-toggle, .nav-email { width: 36px; height: 36px; }
 	.nav-phone { width: 36px; }
 
@@ -779,13 +785,13 @@ h1, h2, h3, h4 {
 @keyframes tp-divider-spark-right {
 	0% { left: 50%; opacity: 0; }
 	15% { opacity: 1; }
-	100% { left: 100%; opacity: 0; }
+	100% { left: calc(100% - 90px); opacity: 0; }
 }
 
 @keyframes tp-divider-spark-left {
 	0% { right: 50%; opacity: 0; }
 	15% { opacity: 1; }
-	100% { right: 100%; opacity: 0; }
+	100% { right: calc(100% - 90px); opacity: 0; }
 }
 
 /* ==================== HERO ==================== */
