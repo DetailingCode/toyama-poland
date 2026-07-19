@@ -1844,8 +1844,8 @@ h1, h2, h3, h4 {
 
 .footer-col a:hover { color: var(--accent); }
 
-.footer-col a.footer-partner-link { display: flex; align-items: center; gap: 8px; }
-.footer-partner-link img { height: 13px; width: auto; display: block; opacity: 0.85; transition: opacity 0.2s ease; }
+.footer-col a.footer-partner-link { display: flex; align-items: center; gap: 8px; padding: 10px 0; }
+.footer-partner-link img { height: 20px; width: auto; display: block; opacity: 0.95; transition: opacity 0.2s ease; }
 .footer-partner-link:hover img { opacity: 1; }
 
 .footer-bottom {
