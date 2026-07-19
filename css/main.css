@@ -1167,7 +1167,7 @@ h1, h2, h3, h4 {
 	color: var(--fog-100);
 }
 
-.tag.tag-accent { background: var(--accent-dim); color: var(--accent); }
+.tag.tag-accent { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
 
 .product-card-img {
 	height: 200px;
