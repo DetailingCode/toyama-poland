@@ -75,6 +75,81 @@ document.addEventListener("DOMContentLoaded", function () {
 		updateCalc();
 	})();
 
+	/* ---------- Battery capacity (Ah) sizing calculator ---------- */
+	(function () {
+		var capPower = document.getElementById("cap-calc-power");
+		var capHours = document.getElementById("cap-calc-hours");
+		var capVoltageGroup = document.getElementById("cap-calc-voltage");
+		var capTypeGroup = document.getElementById("cap-calc-type");
+		var capResult = document.getElementById("cap-calc-result");
+		var capNote = document.getElementById("cap-calc-note");
+		if (!capPower || !capHours || !capVoltageGroup || !capTypeGroup || !capResult) return;
+
+		var LANG = document.documentElement.lang === "en" ? "en" : "pl";
+		var capPowerValue = document.getElementById("cap-calc-power-value");
+		var capHoursValue = document.getElementById("cap-calc-hours-value");
+
+		function fillSlider(el) {
+			var min = parseFloat(el.min);
+			var max = parseFloat(el.max);
+			var val = parseFloat(el.value);
+			var pct = ((val - min) / (max - min)) * 100;
+			el.style.background = "linear-gradient(to right, var(--accent) " + pct + "%, var(--abyss-700) " + pct + "%)";
+		}
+
+		function formatHours(h) {
+			var hLabel = LANG === "en" ? "h" : "godz.";
+			return (h % 1 === 0 ? h : h.toFixed(1)) + " " + hLabel;
+		}
+
+		function activeButton(group) {
+			return group.querySelector("button.is-active") || group.querySelector("button");
+		}
+
+		function updateCap() {
+			var power = parseFloat(capPower.value);
+			var hours = parseFloat(capHours.value);
+			var voltage = parseFloat(activeButton(capVoltageGroup).dataset.value);
+			var dodBtn = activeButton(capTypeGroup);
+			var dod = parseFloat(dodBtn.dataset.dod);
+			var typeLabel = dodBtn.textContent.trim();
+
+			capPowerValue.textContent = power + "W";
+			capHoursValue.textContent = formatHours(hours);
+			fillSlider(capPower);
+			fillSlider(capHours);
+
+			var wh = power * hours;
+			var ah = wh / voltage / dod;
+			capResult.textContent = Math.max(1, Math.round(ah)) + " Ah";
+
+			if (capNote) {
+				var dodPct = Math.round(dod * 100);
+				var noteTpl =
+					LANG === "en"
+						? "Demand " + Math.round(wh) + " Wh ÷ " + voltage + "V, with margin to " + dodPct + "% discharge (" + typeLabel + ")"
+						: "Zapotrzebowanie " + Math.round(wh) + " Wh ÷ " + voltage + "V, z zapasem do " + dodPct + "% rozładowania (" + typeLabel + ")";
+				capNote.textContent = noteTpl;
+			}
+		}
+
+		[capPower, capHours].forEach(function (el) {
+			el.addEventListener("input", updateCap);
+		});
+
+		[capVoltageGroup, capTypeGroup].forEach(function (group) {
+			group.querySelectorAll("button").forEach(function (btn) {
+				btn.addEventListener("click", function () {
+					group.querySelectorAll("button").forEach(function (b) { b.classList.remove("is-active"); });
+					btn.classList.add("is-active");
+					updateCap();
+				});
+			});
+		});
+
+		updateCap();
+	})();
+
 	/* ---------- Loader ---------- */
 	var loader = document.querySelector(".tp-loader");
 	if (loader) {
