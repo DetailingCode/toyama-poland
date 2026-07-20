@@ -88,6 +88,92 @@ document.addEventListener("DOMContentLoaded", function () {
 		var LANG = document.documentElement.lang === "en" ? "en" : "pl";
 		var capPowerValue = document.getElementById("cap-calc-power-value");
 		var capHoursValue = document.getElementById("cap-calc-hours-value");
+		var capMatchGrid = document.getElementById("cap-calc-match-grid");
+
+		// Pełna oferta wg tabel wymiarowych na stronach seria-*.html (dane C20, 2026-07-20).
+		// chem: "lead" = AGM/żelowy/grafenowy/węglowy (zapas do 50% DOD), "lifepo4" = LiFePO4 (do 85% DOD)
+		var BATTERIES = [
+			{ n: "NPC7", v: 12, ah: 7, chem: "lead", type: "AGM", url: "seria-npc.html" },
+			{ n: "NPC9", v: 12, ah: 8.5, chem: "lead", type: "AGM", url: "seria-npc.html" },
+			{ n: "NPG7", v: 12, ah: 7, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG9", v: 12, ah: 8.5, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG18", v: 12, ah: 18, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG26", v: 12, ah: 26, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG35", v: 12, ah: 35, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG45", v: 12, ah: 45, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG60", v: 12, ah: 60, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG80", v: 12, ah: 80, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG100", v: 12, ah: 100, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG120", v: 12, ah: 120, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG130", v: 12, ah: 130, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG150", v: 12, ah: 150, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG200", v: 12, ah: 200, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPG240", v: 12, ah: 240, chem: "lead", type: "GEL", url: "seria-npg.html" },
+			{ n: "NPCG9", v: 12, ah: 8.5, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG18", v: 12, ah: 18, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG26", v: 12, ah: 26, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG35", v: 12, ah: 35, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG42", v: 12, ah: 42, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG55", v: 12, ah: 55, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG75", v: 12, ah: 75, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG100", v: 12, ah: 100, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPCG130", v: 12, ah: 130, chem: "lead", type: "GEL DC", url: "seria-npcg.html" },
+			{ n: "NPM12", v: 12, ah: 12, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM22", v: 12, ah: 22, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM35", v: 12, ah: 35, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM40", v: 12, ah: 40, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM55", v: 12, ah: 55, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM85", v: 12, ah: 85, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM105", v: 12, ah: 105, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "NPM120", v: 12, ah: 120, chem: "lead", type: "Grafen", url: "seria-npm.html" },
+			{ n: "LC50", v: 12, ah: 50, chem: "lead", type: "Węglowy", url: "seria-lc.html" },
+			{ n: "LC75", v: 12, ah: 75, chem: "lead", type: "Węglowy", url: "seria-lc.html" },
+			{ n: "LC100", v: 12, ah: 100, chem: "lead", type: "Węglowy", url: "seria-lc.html" },
+			{ n: "LC120", v: 12, ah: 120, chem: "lead", type: "Węglowy", url: "seria-lc.html" },
+			{ n: "LFP100", v: 12, ah: 100, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+			{ n: "LFP100 BT", v: 12, ah: 100, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+			{ n: "LFP135", v: 12, ah: 135, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+			{ n: "LFP150", v: 12, ah: 150, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+			{ n: "LFP50", v: 24, ah: 50, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+			{ n: "LFP100", v: 24, ah: 100, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+			{ n: "LFP100 BT", v: 24, ah: 100, chem: "lifepo4", type: "LiFePO4", url: "seria-lfp.html" },
+		];
+
+		function renderMatches(requiredAh, voltage, chem) {
+			if (!capMatchGrid) return;
+			var candidates = BATTERIES.filter(function (b) { return b.v === voltage && b.chem === chem; })
+				.sort(function (a, b) { return a.ah - b.ah; });
+
+			if (!candidates.length) {
+				var msg =
+					LANG === "en"
+						? "No " + (chem === "lifepo4" ? "LiFePO4" : "AGM/gel") + " " + voltage + "V models in the current range — for 24V, two 12V batteries can be wired in series (see the Guide)."
+						: "Brak modeli " + (chem === "lifepo4" ? "LiFePO4" : "AGM/żelowych") + " " + voltage + "V w obecnej ofercie — dla 24V można połączyć szeregowo dwa akumulatory 12V (zobacz Poradnik).";
+				capMatchGrid.innerHTML = '<p class="cap-calc-match-empty">' + msg + "</p>";
+				return;
+			}
+
+			var bestIdx = candidates.findIndex(function (b) { return b.ah >= requiredAh; });
+			if (bestIdx === -1) bestIdx = candidates.length - 1;
+
+			var from = Math.max(0, bestIdx - 1);
+			var to = Math.min(candidates.length - 1, bestIdx + 1);
+			var shown = candidates.slice(from, to + 1);
+
+			capMatchGrid.innerHTML = shown
+				.map(function (b) {
+					var isBest = b === candidates[bestIdx];
+					var badge = isBest ? '<span class="cap-calc-match-badge">' + (LANG === "en" ? "Best match" : "Najlepsze dopasowanie") + "</span>" : "";
+					return (
+						'<a href="' + b.url + '" class="cap-calc-match' + (isBest ? " is-best" : "") + '">' +
+						badge +
+						'<div class="cap-calc-match-name">' + b.n + "</div>" +
+						'<div class="cap-calc-match-specs">' + b.ah + " Ah · " + b.v + "V<br>" + b.type + "</div>" +
+						"</a>"
+					);
+				})
+				.join("");
+		}
 
 		function fillSlider(el) {
 			var min = parseFloat(el.min);
@@ -131,6 +217,8 @@ document.addEventListener("DOMContentLoaded", function () {
 						: "Zapotrzebowanie " + Math.round(wh) + " Wh ÷ " + voltage + "V, z zapasem do " + dodPct + "% rozładowania (" + typeLabel + ")";
 				capNote.textContent = noteTpl;
 			}
+
+			renderMatches(Math.max(1, ah), voltage, dod === 0.85 ? "lifepo4" : "lead");
 		}
 
 		[capPower, capHours].forEach(function (el) {
